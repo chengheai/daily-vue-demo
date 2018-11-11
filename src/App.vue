@@ -9,15 +9,19 @@
 <script>
 export default {
   name: 'App',
-  data(){
+  data() {
     return {
-      msg: '页面加载于 ' + new Date().toLocaleString(),
+      msg: '页面加载于 ' + new Date().toLocaleString()
     }
   }
 };
 </script>
 
 <style>
+*{
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,10 +31,13 @@ export default {
 .el-header{
   height: 60px;
   display: flex;
+  background-color: #b3c0d1;
+  color: #333;
   justify-content: center;
   align-items: center;
 }
 .sedtitle{
+  color: #FF4200;
   display: block;
   display: flex;
   justify-content: flex-end;

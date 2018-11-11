@@ -10,27 +10,36 @@
 </template>
 
 <script>
-var now = new Date(), hour = now.getHours();
+var hour = new Date().getHours();
 export default {
   name: 'HelloWorld',
-  data () {
+  data() {
     return {
       greeting: 'Welcome to Your Vue.js App'
     }
   },
   methods: {
-    greet(){
-      if(hour < 6){this.greeting = '凌晨好！';}
-      else if (hour < 9){this.greeting  = '早上好！';}
-      else if (hour < 12){this.greeting  = '上午好！';}
-      else if (hour < 14){this.greeting  = '中午好！';}
-      else if (hour < 17){this.greeting  = '下午好！';}
-      else if (hour < 19){this.greeting  = '傍晚好！';}
-      else if (hour < 22){this.greeting  = '晚上好！';}
-      else {this.greeting  = '夜深了，早点休息！';}
+    greet() {
+      if (hour < 6) {
+        this.greeting = '凌晨好';
+      } else if (hour < 9) {
+        this.greeting = '早上好';
+      } else if (hour < 12) {
+        this.greeting = '上午好';
+      } else if (hour < 14) {
+        this.greeting = '中午好';
+      } else if (hour < 17) {
+        this.greeting = '下午好';
+      } else if (hour < 19) {
+        this.greeting = '傍晚好';
+      } else if (hour < 22) {
+        this.greeting = '晚上好';
+      } else {
+        this.greeting = '夜深了，早点休息';
+      }
     }
   },
-  mounted(){
+  mounted() {
     this.greet()
   }
 }
@@ -41,6 +50,10 @@ export default {
 .gree-wrap{
   display: block;
   width: 100%;
+}
+.el-row{
+  display: flex;
+  justify-content: flex-start;
 }
 h2 {
   text-align: center;
