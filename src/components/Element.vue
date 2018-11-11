@@ -2,7 +2,7 @@
 <div>
   <el-button type='success' @click="goback">返回上一页</el-button>
   <el-button @click="startHacking">Start</el-button>
-  <h4>{{show? 'hh': 'gg'}}</h4>
+  <h4 class="bb">{{show? 'hh': 'gg'}}</h4>
   <el-progress :text-inside="true" :stroke-width="18" :percentage="percentage" color="rgba(142, 113, 199, 0.7)"></el-progress>
   <el-progress type="circle" :percentage="percentage"></el-progress>
   <el-progress type="circle" :percentage="percentage" color="#8e71c7"></el-progress>
@@ -205,7 +205,10 @@ export default {
 };
 </script>
 
-<style lang='css'>
+<style lang='css' scoped>
+.bb{
+  color:blue;
+}
 #app {
   font-family: Helvetica, sans-serif;
   text-align: center;

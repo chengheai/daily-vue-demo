@@ -4,6 +4,7 @@
       <h2>{{greeting}} , 老玻璃！</h2>
     </span>
     <el-row>
+      <h4 class="bb">test</h4>
       <router-link to='/element' tag='li'><el-button type="primary">element</el-button></router-link>
     </el-row>
   </div>
@@ -47,6 +48,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.bb{
+  color: red;
+}
 .gree-wrap{
   display: block;
   width: 100%;
@@ -62,9 +66,11 @@ h2 {
   color: #f35626;
   background-image: -webkit-linear-gradient(92deg,#b83007,#feab3a,#0fb366);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
   -webkit-animation: hue 5s infinite linear;
+  animation: hue 5s infinite linear;
   position: relative;
 }
 ul {

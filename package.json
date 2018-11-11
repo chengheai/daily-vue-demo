@@ -69,7 +69,8 @@
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions",
+    "last 5 versions",
+    "Android >= 4.0",
     "not ie <= 8"
   ]
 }
