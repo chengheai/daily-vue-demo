@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="text-align: center">
   <el-button type='success' @click="goback">返回上一页</el-button>
   <el-button @click="startHacking">Start</el-button>
   <h4 class="bb">{{show? 'hh': 'gg'}}</h4>
