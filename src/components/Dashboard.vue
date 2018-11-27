@@ -4,8 +4,10 @@
       <h2>{{greeting}} , 老玻璃！</h2>
     </span>
     <el-row>
-      <h4 class="bb">test</h4>
+      <!-- <h4 class="bb">test</h4> -->
       <router-link to='/element' tag='li'><el-button type="primary">element</el-button></router-link>
+      <router-link to='/computed' tag='li'><el-button type="warning">computed</el-button></router-link>
+      <router-link to='/lodash' tag='li'><el-button type="warning">lodash</el-button></router-link>
     </el-row>
   </div>
 </template>

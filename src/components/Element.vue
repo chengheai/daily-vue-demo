@@ -14,6 +14,11 @@
       <h3>{{item.message}}</h3>
     </div>
   </div>
+  <div>
+    <div v-for="item in showdetailList" :key='item.message'>
+      <h3>{{item.message}}</h3>
+    </div>
+  </div>
   <el-button type="success" v-if="items.length > 2" v-on:click="changeFoldState">
     <span>{{brandFold?'展开':'收起'}}</span>
   </el-button>
