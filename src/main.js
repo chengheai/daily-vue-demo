@@ -5,8 +5,10 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import animated from 'animate.css'
+import _ from 'lodash'
 import 'element-ui/lib/theme-chalk/index.css'
 
+Vue.prototype._ = _
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(animated)

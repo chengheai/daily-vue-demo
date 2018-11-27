@@ -1,16 +1,15 @@
 <template>
-  <div>
+  <div style="background: #333; color: #fff;">
     <el-row>
-      <el-col :span="12">{{results}}</el-col>
-      <el-col :span="12">
-        <h2>result:
-          <el-col :span='24'>123</el-col>
-          <el-col :span='24'>123</el-col>
-          <el-col :span='24'>123</el-col>
-          <el-col :span='24'>123</el-col>
-          <el-col :span='24'>123</el-col>
-          <el-col :span='24'>123</el-col>
-        </h2>
+      <el-col :span="11">{{results}}</el-col>
+      <el-col class="heals" :span="2"></el-col>
+      <el-col :span="11">
+        <el-col :span='24'>
+          <h3>
+            <el-row>_.take</el-row>
+          </h3>
+          <el-row>{{result1}}</el-row>
+        </el-col>
       </el-col>
     </el-row>
   </div>
@@ -18,11 +17,13 @@
 
 <script>
 import { results } from './../mock/mock.js'
+import _ from 'lodash';
 
 export default {
   data() {
     return {
-      results: []
+      results: [],
+      result1: []
     }
   },
   mounted() {
@@ -30,12 +31,34 @@ export default {
   },
   methods: {
     init() {
-      return (this.results = results);
+      this.results = results;
+      this.result1 = _.take(results, 2);
+      // return (this.results = results);
     }
   }
 }
 </script>
 
-<style>
-
+<style scoped>
+  .heals{
+    margin: 0 5px;
+    width: 10px;
+    height: 3600px;
+    border: 1px solid #FFC0CB;
+    /* border-radius: 5px; */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    background-image:linear-gradient(#FFC0CB, #FF69B4);
+    animation: breath 2500ms infinite ease-in-out alternate;
+  }
+  @keyframes breath {
+  0% {
+    opacity: .2;
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    opacity: 1;
+    border: 1px solid rgba(255, 192, 203, 1);
+    box-shadow: 0 1px 30px rgba(255, 192, 203, 1);
+  }
+}
 </style>

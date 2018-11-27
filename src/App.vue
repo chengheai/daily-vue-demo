@@ -28,6 +28,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+::-webkit-scrollbar {width:10px;height:6px;background: #4491DE;}
+::-webkit-scrollbar-thumb {-webkit-box-shadow: inset 0 0 16px #c00;}
+::-webkit-input-placeholder { /* WebKit browsers */   color:    #FF9503;}
 .el-header{
   height: 60px;
   display: flex;
