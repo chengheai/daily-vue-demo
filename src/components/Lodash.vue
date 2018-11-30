@@ -6,9 +6,13 @@
       <el-col :span="11">
         <el-col :span='24'>
           <h3>
-            <el-row>_.take</el-row>
+            <el-row>_.take(results, 3)</el-row>
           </h3>
           <el-row>{{result1}}</el-row>
+          <h3>
+            <el-row>_.each(results, function(values, key, items){})</el-row>
+          </h3>
+          <el-row>{{result2}}</el-row>
         </el-col>
       </el-col>
     </el-row>
@@ -23,7 +27,8 @@ export default {
   data() {
     return {
       results: [],
-      result1: []
+      result1: [],
+      result2: []
     }
   },
   mounted() {
@@ -32,7 +37,19 @@ export default {
   methods: {
     init() {
       this.results = results;
-      this.result1 = _.take(results, 2);
+      this.result1 = _.take(results, 3);
+      this.result2 = _.each(this.result1, function(values, key, items) {
+        console.log(values)
+        console.log(key)
+        console.log(items)
+        if (values.id === '1205') {
+          values.value = false
+        } else if (values.id === 'sss') {
+          values.value = true
+        } else {
+          values.value
+        }
+      });
       // return (this.results = results);
     }
   }
