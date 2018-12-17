@@ -6,6 +6,7 @@ import Computed from '@/components/Computed'
 import Lodash from '@/components/Lodash'
 import Switch from '@/components/Switch'
 import savedPosition from '@/components/savedPosition'
+import Transition from '@/components/Transition'
 
 Vue.use(Router)
 
@@ -44,6 +45,11 @@ export default new Router({
       path: '/savedPosition',
       name: 'savedPosition',
       component: savedPosition
+    },
+    {
+      path: '/transition',
+      name: 'Transition',
+      component: Transition
     }
   ],
   scrollBehavior (to, from, savedPosition) {
