@@ -13,6 +13,10 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/dashboard'
+    },
+    {
+      path: '/dashboard',
       name: 'Dashboard',
       component: Dashboard
     },
@@ -41,5 +45,13 @@ export default new Router({
       name: 'savedPosition',
       component: savedPosition
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    console.log(savedPosition);
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
