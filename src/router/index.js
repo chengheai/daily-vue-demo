@@ -4,6 +4,8 @@ import Dashboard from '@/components/Dashboard'
 import Element from '@/components/Element'
 import Computed from '@/components/Computed'
 import Lodash from '@/components/Lodash'
+import Switch from '@/components/Switch'
+import savedPosition from '@/components/savedPosition'
 
 Vue.use(Router)
 
@@ -28,6 +30,23 @@ export default new Router({
       path: '/lodash',
       name: 'Lodash',
       component: Lodash
+    },
+    {
+      path: '/switch',
+      name: 'Switch',
+      component: Switch
+    },
+    {
+      path: '/savedPosition',
+      name: 'savedPosition',
+      component: savedPosition
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })

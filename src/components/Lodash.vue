@@ -47,7 +47,7 @@ export default {
         } else if (values.id === 'sss') {
           values.value = true
         } else {
-          values.value
+          values.value = values.value
         }
       });
       // return (this.results = results);

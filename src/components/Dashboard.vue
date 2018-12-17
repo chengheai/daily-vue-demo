@@ -8,6 +8,8 @@
       <router-link to='/element' tag='li'><el-button type="primary">element</el-button></router-link>
       <router-link to='/computed' tag='li'><el-button type="warning">computed</el-button></router-link>
       <router-link to='/lodash' tag='li'><el-button type="info">lodash</el-button></router-link>
+      <router-link to='/switch' tag='li'><el-button type="success">switch</el-button></router-link>
+      <router-link to='/savedPosition' tag='li'><el-button type="success">savedPosition</el-button></router-link>
     </el-row>
   </div>
 </template>
