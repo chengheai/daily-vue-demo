@@ -3,7 +3,7 @@
     <span class="gree-wrap animated flip slower">
       <h2>{{greeting}} , 老玻璃！</h2>
     </span>
-    <el-row>
+    <el-row style="margin-top: 100px">
       <!-- <h4 class="bb">test</h4> -->
       <router-link to='/element' tag='li'><el-button type="primary">element</el-button></router-link>
       <router-link to='/computed' tag='li'><el-button type="warning">computed</el-button></router-link>
@@ -11,6 +11,7 @@
       <router-link to='/switch' tag='li'><el-button type="success">switch</el-button></router-link>
       <router-link to='/savedPosition' tag='li'><el-button type="warning">savedPosition</el-button></router-link>
       <router-link to='/transition' tag='li'><el-button type="danger">transition</el-button></router-link>
+      <router-link to='/gugong' tag='li'><el-button type="primary">gugong</el-button></router-link>
     </el-row>
   </div>
 </template>

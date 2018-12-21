@@ -114,7 +114,8 @@ export default {
     ];
     console.log(_.orderBy(users1, ["age"], "desc"));
     console.log(_.partition(users1, ['active', true])) // 分成两个数组
-
+    console.log(_.reduce([1, 2, 3], {})); // 不理解
+    console.log(_.reject(users1, 'active'));
   },
   methods: {
     init() {

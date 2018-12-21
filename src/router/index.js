@@ -7,6 +7,7 @@ import Lodash from '@/components/Lodash'
 import Switch from '@/components/Switch'
 import savedPosition from '@/components/savedPosition'
 import Transition from '@/components/Transition'
+import Gugong from '@/components/Gugong'
 
 Vue.use(Router)
 
@@ -50,6 +51,11 @@ export default new Router({
       path: '/transition',
       name: 'Transition',
       component: Transition
+    },
+    {
+      path: '/gugong',
+      name: 'Gugong',
+      component: Gugong
     }
   ],
   scrollBehavior (to, from, savedPosition) {
