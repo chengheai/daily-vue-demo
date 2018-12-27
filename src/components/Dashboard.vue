@@ -3,16 +3,32 @@
     <span class="gree-wrap animated flip slower">
       <h2>{{greeting}} , 老玻璃！</h2>
     </span>
-    <el-row style="margin-top: 100px">
-      <!-- <h4 class="bb">test</h4> -->
-      <router-link to='/element' tag='li'><el-button type="primary">element</el-button></router-link>
-      <router-link to='/computed' tag='li'><el-button type="warning">computed</el-button></router-link>
-      <router-link to='/lodash' tag='li'><el-button type="info">lodash</el-button></router-link>
-      <router-link to='/switch' tag='li'><el-button type="success">switch</el-button></router-link>
-      <router-link to='/savedPosition' tag='li'><el-button type="warning">savedPosition</el-button></router-link>
-      <router-link to='/transition' tag='li'><el-button type="danger">transition</el-button></router-link>
-      <router-link to='/gugong' tag='li'><el-button type="primary">故宫地图</el-button></router-link>
-    </el-row>
+    <!-- <el-row style="margin-top: 100px"> -->
+      <el-col :xs=12 :sm=6 :md=6 :lg=3 :xl=2>
+        <router-link to='/element' tag='li'><el-button type="primary">element</el-button></router-link>
+      </el-col>
+      <el-col :xs=12 :sm=6 :md=6 :lg=3 :xl=2>
+        <router-link to='/computed' tag='li'><el-button type="warning">computed</el-button></router-link>
+      </el-col>
+      <el-col :xs=12 :sm=6 :md=6 :lg=3 :xl=2>
+        <router-link to='/lodash' tag='li'><el-button type="info">lodash</el-button></router-link>
+      </el-col>
+      <el-col :xs=12 :sm=6 :md=6 :lg=3 :xl=2>
+        <router-link to='/switch' tag='li'><el-button type="success">switch</el-button></router-link>
+      </el-col>
+      <el-col :xs=12 :sm=6 :md=6 :lg=3 :xl=2>
+        <router-link to='/savedPosition' tag='li'><el-button type="warning">savedPosition</el-button></router-link>
+      </el-col>
+      <el-col :xs=12 :sm=6 :md=6 :lg=3 :xl=2>
+        <router-link to='/transition' tag='li'><el-button type="danger">transition</el-button></router-link>
+      </el-col>
+      <el-col :xs=12 :sm=6 :md=6 :lg=3 :xl=2>
+        <router-link to='/gugong' tag='li'><el-button type="primary">故宫地图</el-button></router-link>
+      </el-col>
+      <el-col :xs=12 :sm=6 :md=6 :lg=3 :xl=2>
+        <router-link to='/search' tag='li'><el-button type="primary">远程搜索</el-button></router-link>
+      </el-col>
+    <!-- </el-row> -->
   </div>
 </template>
 
@@ -60,6 +76,9 @@ export default {
 .gree-wrap{
   display: block;
   width: 100%;
+}
+.el-col{
+  margin-top: 10px;
 }
 .el-row{
   display: flex;

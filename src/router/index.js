@@ -8,6 +8,7 @@ import Switch from '@/components/Switch'
 import savedPosition from '@/components/savedPosition'
 import Transition from '@/components/Transition'
 import Gugong from '@/components/Gugong'
+import Search from '@/components/Search'
 
 Vue.use(Router)
 
@@ -56,6 +57,11 @@ export default new Router({
       path: '/gugong',
       name: 'Gugong',
       component: Gugong
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search
     }
   ],
   scrollBehavior (to, from, savedPosition) {
