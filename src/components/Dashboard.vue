@@ -11,7 +11,7 @@
       <router-link to='/switch' tag='li'><el-button type="success">switch</el-button></router-link>
       <router-link to='/savedPosition' tag='li'><el-button type="warning">savedPosition</el-button></router-link>
       <router-link to='/transition' tag='li'><el-button type="danger">transition</el-button></router-link>
-      <router-link to='/gugong' tag='li'><el-button type="primary">gugong</el-button></router-link>
+      <router-link to='/gugong' tag='li'><el-button type="primary">故宫地图</el-button></router-link>
     </el-row>
   </div>
 </template>
