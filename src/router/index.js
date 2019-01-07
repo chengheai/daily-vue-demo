@@ -9,6 +9,7 @@ import savedPosition from '@/components/savedPosition'
 import Transition from '@/components/Transition'
 import Gugong from '@/components/Gugong'
 import Search from '@/components/Search'
+import Calendar from '@/components/Calendar'
 
 Vue.use(Router)
 
@@ -62,6 +63,11 @@ export default new Router({
       path: '/search',
       name: 'Search',
       component: Search
+    },
+    {
+      path: '/calendar',
+      name: 'Calendar',
+      component: Calendar
     }
   ],
   scrollBehavior (to, from, savedPosition) {
