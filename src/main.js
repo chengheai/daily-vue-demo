@@ -7,6 +7,7 @@ import ElementUI from 'element-ui'
 import animated from 'animate.css'
 import _ from 'lodash'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'element-ui/lib/theme-chalk/display.css'
 
 Vue.prototype._ = _
 Vue.config.productionTip = false
