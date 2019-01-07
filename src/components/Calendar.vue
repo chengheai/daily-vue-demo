@@ -6,7 +6,7 @@
           <!-- 日期 -->
           <ul class="days">
             <li @click="weekPre" class="prev-btn">
-              <i class="fa fa-angle-left fa-icon" aria-hidden="true"></i>
+              <i class="el-icon-arrow-left" aria-hidden="true"></i>
               <span class="hidden-sm-and-down" style="margin-left: 5px;">上一周</span>
             </li>
             <li
@@ -34,7 +34,7 @@
             </li>
             <li @click="weekNext" class="next-btn">
               <span class="hidden-sm-and-down" style="margin-right: 5px;">下一周</span>
-              <i class="fa fa-angle-right fa-icon" aria-hidden="true"></i>
+              <i class="el-icon-arrow-right" aria-hidden="true"></i>
             </li>
             <li>
               <span>
