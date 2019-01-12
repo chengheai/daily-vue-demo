@@ -10,6 +10,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'element-ui/lib/theme-chalk/display.css'
 
 Vue.prototype._ = _
+// Object.defineProperty(Vue.prototype._, '_', { value: lodash });
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(animated)

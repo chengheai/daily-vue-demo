@@ -6,14 +6,15 @@
           <!-- 日期 -->
           <ul class="days">
             <li @click="weekPre" class="prev-btn">
-              <i class="el-icon-arrow-left" aria-hidden="true"></i>
+              <i class="fa fa-angle-left fa-icon" aria-hidden="true"></i>
               <span class="hidden-sm-and-down" style="margin-left: 5px;">上一周</span>
             </li>
             <li
+              class="date-item"
               @click="pick(day, index)"
               v-for="(day, index) in days"
               :key="index"
-              :class="{selected:index == tabIndex}"
+              :class="{selected: index == tabIndex}"
             >
               <!--本月-->
               <span v-if="day.getMonth()+1 != currentMonth" class="other-month item-wrapper">
@@ -34,7 +35,7 @@
             </li>
             <li @click="weekNext" class="next-btn">
               <span class="hidden-sm-and-down" style="margin-right: 5px;">下一周</span>
-              <i class="el-icon-arrow-right" aria-hidden="true"></i>
+              <i class="fa fa-angle-right fa-icon" aria-hidden="true"></i>
             </li>
             <li>
               <span>
@@ -42,7 +43,7 @@
                   class="right-pick-btn"
                   style="width: 100%"
                   @change="pickDate"
-                  v-model="value1"
+                  v-model="newDate"
                   type="date"
                   placeholder="按日期查询"
                 ></el-date-picker>
@@ -59,7 +60,7 @@
           v-for="(time, index) in times"
           :key="index"
           :class="{active:index == tabTimeIndex}"
-        >{{time}}</span>
+        >{{time.label}}</span>
       </el-col>
     </el-row>
   </div>
@@ -88,13 +89,14 @@ export default {
       days: [],
       value1: "",
       tabIndex: null,
-      tabTimeIndex: 0,
+      newDate: '',
+      tabTimeIndex: 4,
       times: [
-        "00:00~06:00",
-        "06:00~12:00",
-        "12:00~18:00",
-        "18:00~24:00",
-        "今日节目"
+        {'time':'00:00:00~06:00:00', 'label': '00:00~06:00'},
+        {'time':'06:00:00~12:00:00', 'label': '06:00~12:00'},
+        {'time':'12:00:00~18:00:00', 'label': '12:00~18:00'},
+        {'time':'18:00:00~24:00:00', 'label': '18:00~24:00'},
+        {'time':'00:00:00~24:00:00', 'label': '今日节目'}
       ]
     };
   },
@@ -141,8 +143,8 @@ export default {
       return `${y}-${m}-${d}`;
     },
     pickDate(date) {
-      let newDate = moment(date).format("YYYY-MM-DD");
-      this.$emit("dateValue", newDate);
+      this.newDate = moment(date).format("YYYY-MM-DD");
+      this.$emit("dateValue", this.newDate);
     },
     initData(cur) {
       let date = "";
@@ -209,8 +211,8 @@ export default {
 
     // 当前选择日期
     pick(date, index) {
-      let newDate = moment(date).format("YYYY-MM-DD");
-      this.$emit("dateValue", newDate);
+      this.newDate = moment(date).format("YYYY-MM-DD");
+      this.$emit("dateValue", this.newDate);
       // console.log("index: ", index);
       this.tabIndex = index;
       // alert(
@@ -220,8 +222,8 @@ export default {
     pickTime(time, index) {
       // console.log('time: ', time);
       let timeArr = [];
-      timeArr.push(_.head(_.split(time, "~")));
-      console.log("timeArr: ", timeArr);
+      timeArr.push((_.split(time.time, "~")));
+      // console.log("timeArr: ", timeArr);
       this.$emit("timeValue", _.join(timeArr), "");
       // console.log("index: ", index);
       this.tabTimeIndex = index;
@@ -248,10 +250,10 @@ export default {
 .selected {
   height: 57px !important;
   box-sizing: border-box;
-  border: 1px solid red !important;
+  color: #fff!important;
+  background: #409EFF!important;
 }
 .item-wrapper {
-  color: #606266;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -288,9 +290,15 @@ export default {
       cursor: pointer;
       padding-bottom: 5px;
       border-bottom: 3px solid #fff;
+      &:hover{
+        border-bottom: 3px solid rgb(151, 198, 245);
+      }
+      &:active{
+        border-bottom: 3px solid rgb(151, 198, 245);
+      }
     }
     .active {
-      border-bottom: 3px solid #ccc;
+      border-bottom: 3px solid #409EFF;
     }
   }
   .days {
@@ -306,15 +314,16 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      .active {
-        display: inline-block;
-        color: #fff;
-        border-radius: 50%;
-        border: 1px solid red;
-      }
-
       .other-month {
-        color: #c0c4cc;
+        // color: #c0c4cc;
+      }
+    }
+    .date-item{
+      &:hover{
+        background: #DFF0D8;
+      }
+      &:active{
+        background: #DFF0D8;
       }
     }
     li:nth-last-child(1) {
