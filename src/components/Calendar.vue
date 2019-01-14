@@ -42,6 +42,7 @@
                 <el-date-picker
                   class="right-pick-btn"
                   style="width: 100%"
+                  :clearable=false
                   @change="pickDate"
                   v-model="newDate"
                   type="date"
@@ -89,14 +90,14 @@ export default {
       days: [],
       value1: "",
       tabIndex: null,
-      newDate: '',
+      newDate: moment(new Date()).format("YYYY-MM-DD"),
       tabTimeIndex: 4,
       times: [
-        {'time':'00:00:00~06:00:00', 'label': '00:00~06:00'},
-        {'time':'06:00:00~12:00:00', 'label': '06:00~12:00'},
-        {'time':'12:00:00~18:00:00', 'label': '12:00~18:00'},
-        {'time':'18:00:00~24:00:00', 'label': '18:00~24:00'},
-        {'time':'00:00:00~24:00:00', 'label': '今日节目'}
+        { time: "00:00:00~06:00:00", label: "00:00~06:00" },
+        { time: "06:00:00~12:00:00", label: "06:00~12:00" },
+        { time: "12:00:00~18:00:00", label: "12:00~18:00" },
+        { time: "18:00:00~24:00:00", label: "18:00~24:00" },
+        { time: "00:00:00~24:00:00", label: "今日节目" }
       ]
     };
   },
@@ -143,8 +144,16 @@ export default {
       return `${y}-${m}-${d}`;
     },
     pickDate(date) {
-      this.newDate = moment(date).format("YYYY-MM-DD");
-      this.$emit("dateValue", this.newDate);
+      let that = this;
+      that.newDate = moment(date).format("YYYY-MM-DD");
+      that.$emit("dateValue", that.newDate);
+      console.log("this.newDate: ", that.newDate);
+      that.initData(that.newDate);
+      const index = _.findIndex(that.days, function(o) {
+        return o.getDate() === new Date(that.newDate).getDate();
+      });
+      // console.log("index: ", index);
+      this.tabIndex = index;
     },
     initData(cur) {
       let date = "";
@@ -168,16 +177,20 @@ export default {
       this.days.length = 0;
       // 今天是周日，放在第一行第7个位置，前面6个 这里默认显示一周，如果需要显示一个月，则第二个循环为 i<= 35- this.currentWeek
       /* eslint-disabled */
+      // 今天
       for (let i = this.currentWeek - 1; i >= 0; i -= 1) {
         const d = new Date(str);
         d.setDate(d.getDate() - i);
         // console.log(y:" + d.getDate())
+        // console.log('d: ', d);
         this.days.push(d);
       }
+      // 这个星期
       for (let i = 1; i <= 7 - this.currentWeek; i += 1) {
         const d = new Date(str);
         d.setDate(d.getDate() + i);
         this.days.push(d);
+        // console.log('d1: ', d);
       }
     },
 
@@ -222,7 +235,7 @@ export default {
     pickTime(time, index) {
       // console.log('time: ', time);
       let timeArr = [];
-      timeArr.push((_.split(time.time, "~")));
+      timeArr.push(_.split(time.time, "~"));
       // console.log("timeArr: ", timeArr);
       this.$emit("timeValue", _.join(timeArr), "");
       // console.log("index: ", index);
@@ -236,12 +249,12 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@media screen and (max-width:1300px){
- .days{
-   li{
-     padding: 5px 0!important;
-   }
- }
+@media screen and (max-width: 1300px) {
+  .days {
+    li {
+      padding: 5px 0 !important;
+    }
+  }
 }
 .today-item {
   cursor: pointer;
@@ -250,8 +263,8 @@ export default {
 .selected {
   height: 57px !important;
   box-sizing: border-box;
-  color: #fff!important;
-  background: #409EFF!important;
+  color: #fff !important;
+  background: #409eff !important;
 }
 .item-wrapper {
   display: flex;
@@ -290,15 +303,15 @@ export default {
       cursor: pointer;
       padding-bottom: 5px;
       border-bottom: 3px solid #fff;
-      &:hover{
+      &:hover {
         border-bottom: 3px solid rgb(151, 198, 245);
       }
-      &:active{
+      &:active {
         border-bottom: 3px solid rgb(151, 198, 245);
       }
     }
     .active {
-      border-bottom: 3px solid #409EFF;
+      border-bottom: 3px solid #409eff;
     }
   }
   .days {
@@ -318,12 +331,12 @@ export default {
         // color: #c0c4cc;
       }
     }
-    .date-item{
-      &:hover{
-        background: #DFF0D8;
+    .date-item {
+      &:hover {
+        background: #dff0d8;
       }
-      &:active{
-        background: #DFF0D8;
+      &:active {
+        background: #dff0d8;
       }
     }
     li:nth-last-child(1) {
