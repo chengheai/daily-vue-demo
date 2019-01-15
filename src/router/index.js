@@ -10,6 +10,7 @@ import Transition from '@/components/Transition'
 import Gugong from '@/components/Gugong'
 import Search from '@/components/Search'
 import Calendar from '@/components/Calendar'
+import Calendar1 from '@/components/Calendar.1'
 
 Vue.use(Router)
 
@@ -68,6 +69,11 @@ export default new Router({
       path: '/calendar',
       name: 'Calendar',
       component: Calendar
+    },
+    {
+      path: '/calendar1',
+      name: 'Calendar1',
+      component: Calendar1
     }
   ],
   scrollBehavior (to, from, savedPosition) {
