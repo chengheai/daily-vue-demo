@@ -1,6 +1,7 @@
 <template>
   <h1>
     <VueWeekPicker />
+    <vue-week-picker />
   </h1>
 </template>
 
@@ -8,6 +9,7 @@
 import VueWeekPicker from 'vue-week-picker';
 export default {
   components: {
+    'vue-week-picker': VueWeekPicker,
     VueWeekPicker
   }
 }
