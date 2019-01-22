@@ -11,6 +11,7 @@ import Gugong from '@/components/Gugong'
 import Search from '@/components/Search'
 import Calendar from '@/components/Calendar'
 import Calendar1 from '@/components/Calendar.1'
+import Emotion from '@/components/Emotion'
 
 Vue.use(Router)
 
@@ -74,6 +75,11 @@ export default new Router({
       path: '/calendar1',
       name: 'Calendar1',
       component: Calendar1
+    },
+    {
+      path: '/emotion',
+      name: 'Emotion',
+      component: Emotion
     }
   ],
   scrollBehavior (to, from, savedPosition) {
