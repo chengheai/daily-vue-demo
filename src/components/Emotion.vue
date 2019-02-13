@@ -35,7 +35,7 @@ export default {
         that.list.push(item);
         if (that.list.length === 250) {
           that.$notify({
-            title: "佩佩",
+            title: "提示",
             type: "success",
             message: "这里是250个❤️❤️❤️❤️❤️",
             duration: 0,
@@ -44,13 +44,13 @@ export default {
                 that.list.push(item1);
                 if (that.list.length === 520) {
                   that.$notify({
-                    title: "佩佩",
+                    title: "提示",
                     type: "success",
                     message: "这里总共520个",
                     duration: 0,
                     onClose: function() {
                       that
-                        .$confirm("🐷🐷🐷猪佩佩🐷🐷🐷，好玩吗?", "提示", {
+                        .$confirm("🐷🐷🐷🐷🐷🐷，好玩吗?", "提示", {
                           confirmButtonText: "好玩",
                           cancelButtonText: "不好玩",
                           type: "warning"
@@ -58,13 +58,13 @@ export default {
                         .then(() => {
                           that.$message({
                             type: "success",
-                            message: "佩佩是猪🐷🐷 ！！！"
+                            message: "猪🐷🐷 ！！！"
                           });
                         })
                         .catch(() => {
                           that.$message({
                             type: "success",
-                            message: "佩佩是猪🐷🐷 ！！！！！"
+                            message: "猪🐷🐷 ！！！！！"
                           });
                         });
                     }
