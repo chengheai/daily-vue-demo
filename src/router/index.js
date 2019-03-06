@@ -13,6 +13,7 @@ import Search from '@/components/Search'
 import Calendar from '@/components/Calendar'
 import Calendar1 from '@/components/Calendar.1'
 import Emotion from '@/components/Emotion'
+import Es6 from '@/components/Es6'
 
 Vue.use(Router)
 
@@ -81,6 +82,11 @@ export default new Router({
       path: '/lodash1',
       name: 'lodash1',
       component: Lodash1
+    },
+    {
+      path: '/es6',
+      name: 'es6',
+      component: Es6
     },
     {
       path: '/emotion',
