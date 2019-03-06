@@ -4,6 +4,7 @@ import Dashboard from '@/components/Dashboard'
 import Element from '@/components/Element'
 import Computed from '@/components/Computed'
 import Lodash from '@/components/Lodash'
+import Lodash1 from '@/components/Lodash1'
 import Switch from '@/components/Switch'
 import savedPosition from '@/components/savedPosition'
 import Transition from '@/components/Transition'
@@ -75,6 +76,11 @@ export default new Router({
       path: '/calendar1',
       name: 'Calendar1',
       component: Calendar1
+    },
+    {
+      path: '/lodash1',
+      name: 'lodash1',
+      component: Lodash1
     },
     {
       path: '/emotion',

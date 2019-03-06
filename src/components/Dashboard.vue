@@ -37,6 +37,9 @@
       <el-col :xs=12 :sm=6 :md=6 :lg=3 :xl=2>
         <router-link to='/emotion' tag='li'><el-button type="primary">Emotion</el-button></router-link>
       </el-col>
+      <el-col :xs=12 :sm=6 :md=6 :lg=3 :xl=2>
+        <router-link to='/lodash1' tag='li'><el-button type="primary">lodash强化练习</el-button></router-link>
+      </el-col>
     <!-- </el-row> -->
   </div>
 </template>
