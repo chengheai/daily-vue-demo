@@ -14,6 +14,7 @@ import Calendar from '@/components/Calendar'
 import Calendar1 from '@/components/Calendar.1'
 import Emotion from '@/components/Emotion'
 import Es6 from '@/components/Es6'
+import Learning from '@/components/Learning'
 
 Vue.use(Router)
 
@@ -87,6 +88,11 @@ export default new Router({
       path: '/es6',
       name: 'es6',
       component: Es6
+    },
+    {
+      path: '/learning',
+      name: 'learning',
+      component: Learning
     },
     {
       path: '/emotion',
