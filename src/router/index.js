@@ -14,6 +14,7 @@ import Calendar from '@/components/Calendar'
 import Calendar1 from '@/components/Calendar.1'
 import Emotion from '@/components/Emotion'
 import Es6 from '@/components/Es6'
+import TimeDisable from '@/components/TimeDisable'
 import Learning from '@/components/Learning'
 
 Vue.use(Router)
@@ -93,6 +94,11 @@ export default new Router({
       path: '/learning',
       name: 'learning',
       component: Learning
+    },
+    {
+      path: '/timedisable',
+      name: 'timedisable',
+      component: TimeDisable
     },
     {
       path: '/emotion',
