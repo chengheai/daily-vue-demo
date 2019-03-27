@@ -16,6 +16,7 @@ import Emotion from '@/components/Emotion'
 import Es6 from '@/components/Es6'
 import TimeDisable from '@/components/TimeDisable'
 import Learning from '@/components/Learning'
+import Blur from '@/components/Blur'
 
 Vue.use(Router)
 
@@ -99,6 +100,11 @@ export default new Router({
       path: '/timedisable',
       name: 'timedisable',
       component: TimeDisable
+    },
+    {
+      path: '/blur',
+      name: 'blur',
+      component: Blur
     },
     {
       path: '/emotion',
