@@ -17,6 +17,7 @@ import Es6 from '@/components/Es6'
 import TimeDisable from '@/components/TimeDisable'
 import Learning from '@/components/Learning'
 import Blur from '@/components/Blur'
+import Conghu from '@/components/Conghu'
 
 Vue.use(Router)
 
@@ -105,6 +106,11 @@ export default new Router({
       path: '/blur',
       name: 'blur',
       component: Blur
+    },
+    {
+      path: '/conghu',
+      name: 'conghu',
+      component: Conghu
     },
     {
       path: '/emotion',

@@ -18,6 +18,7 @@ export default {
 </script>
 
 <style>
+@import "./comm/main.css";
 *{
   margin: 0;
   padding: 0;
