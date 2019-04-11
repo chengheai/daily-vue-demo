@@ -18,6 +18,7 @@ import TimeDisable from '@/components/TimeDisable'
 import Learning from '@/components/Learning'
 import Blur from '@/components/Blur'
 import Conghu from '@/components/Conghu'
+import UploadFile from '@/components/UploadFile'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/element',
       name: 'Element',
       component: Element
+    },
+    {
+      path: '/upload-file',
+      name: 'UploadFile',
+      component: UploadFile
     },
     {
       path: '/computed',

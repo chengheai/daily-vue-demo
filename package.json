@@ -12,11 +12,13 @@
   },
   "dependencies": {
     "animate.css": "^3.7.0",
+    "axios": "^0.18.0",
     "element-ui": "^2.4.9",
     "hover.css": "^2.3.2",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vue-week-picker": "^1.1.6"
+    "vue-week-picker": "^1.1.6",
+    "vuex": "^3.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
