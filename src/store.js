@@ -18,6 +18,7 @@ export default new Vuex.Store({
     upload({ commit }, file) {
       const config = {
         onUploadProgress: function(progressEvent) {
+          console.log(progressEvent);
           const uploadPercentage = Math.round((progressEvent.loaded * 100) / progressEvent.total);
           commit('setUploadPercentage', uploadPercentage);
         },

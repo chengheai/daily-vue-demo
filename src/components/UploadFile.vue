@@ -20,6 +20,10 @@
     ></el-progress>
     <el-progress :text-inside="true" :stroke-width="18" :percentage="percentage" status="success"></el-progress>
     <el-progress :text-inside="true" :stroke-width="18" :percentage="percentage" status="exception"></el-progress>
+    <el-progress type="circle" :percentage="percentage"></el-progress>
+    <el-progress type="circle" :percentage="percentage" color="#8e71c7"></el-progress>
+    <el-progress type="circle" :percentage="percentage" status="success"></el-progress>
+    <el-progress type="circle" :percentage="percentage" status="exception"></el-progress>
   </div>
 </template>
 <script>
