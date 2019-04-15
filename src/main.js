@@ -28,6 +28,16 @@ Vue.prototype.validForbid = function (value, number = 255) {
   }
   return value;
 }
+Vue.prototype.validSe = function (value, number = 255) {
+  value = value.replace(/[`~!@#$%^&*()_\-+=<>?:"{}|,./;'\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/g, '').replace(/\s/g, "");
+  if (value.length >= number) {
+    this.$message({
+      type: "warning",
+      message: `输入内容不能超过${number}个字符`
+    });
+  }
+  return value;
+}
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
