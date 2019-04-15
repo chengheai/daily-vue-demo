@@ -30,7 +30,8 @@ export default new Vuex.Store({
         .then(data => {
           console.log(data);
         })
-        .then(err => {
+        .catch(err => {
+          commit('setUploadPercentage', 10);
           console.log(err);
         });
     },
