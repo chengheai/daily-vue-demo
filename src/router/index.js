@@ -19,6 +19,7 @@ import Learning from '@/components/Learning'
 import Blur from '@/components/Blur'
 import Conghu from '@/components/Conghu'
 import UploadFile from '@/components/UploadFile'
+import Input from '@/components/Input'
 
 Vue.use(Router)
 
@@ -117,6 +118,11 @@ export default new Router({
       path: '/conghu',
       name: 'conghu',
       component: Conghu
+    },
+    {
+      path: '/input',
+      name: 'input',
+      component: Input
     },
     {
       path: '/emotion',
