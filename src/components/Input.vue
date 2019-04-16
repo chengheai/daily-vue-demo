@@ -5,7 +5,7 @@
         <el-input v-model="form.user" placeholder="不过滤特殊字符"></el-input>===>
         <h3>{{form.user}}</h3>
       </el-form-item>
-      <el-form-item label="-_-禁止输入特殊字符" prop="newText">
+      <el-form-item label="-_-禁止输入特殊字符" prop="name">
         <el-input
           :value="form.name"
           @input="e => form.name = validSe(e)"
@@ -33,7 +33,7 @@ export default {
     return {
       form: {
         user: "",
-        newText: "",
+        name: "",
         region: ""
       }
     };
