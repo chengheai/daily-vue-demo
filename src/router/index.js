@@ -19,6 +19,7 @@ import Learning from '@/components/Learning'
 import Blur from '@/components/Blur'
 import Conghu from '@/components/Conghu'
 import UploadFile from '@/components/UploadFile'
+import Table from '@/components/Table'
 import Input from '@/components/Input'
 
 Vue.use(Router)
@@ -123,6 +124,11 @@ export default new Router({
       path: '/input',
       name: 'input',
       component: Input
+    },
+    {
+      path: '/table',
+      name: 'table',
+      component: Table
     },
     {
       path: '/emotion',
