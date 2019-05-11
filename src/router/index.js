@@ -19,6 +19,7 @@ import Learning from '@/components/Learning'
 import Blur from '@/components/Blur'
 import Conghu from '@/components/Conghu'
 import UploadFile from '@/components/UploadFile'
+import Draggable from '@/components/Draggable'
 import Table from '@/components/Table'
 import Input from '@/components/Input'
 
@@ -49,6 +50,11 @@ export default new Router({
       path: '/computed',
       name: 'Computed',
       component: Computed
+    },
+    {
+      path: '/draggable',
+      name: 'Draggable',
+      component: Draggable
     },
     {
       path: '/lodash',
