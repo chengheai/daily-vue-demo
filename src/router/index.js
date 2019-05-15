@@ -22,6 +22,7 @@ import UploadFile from '@/components/UploadFile'
 import Draggable from '@/components/Draggable'
 import Table from '@/components/Table'
 import Input from '@/components/Input'
+import Axios from '@/components/Axios'
 
 Vue.use(Router)
 
@@ -135,6 +136,11 @@ export default new Router({
       path: '/table',
       name: 'table',
       component: Table
+    },
+    {
+      path: '/axios',
+      name: 'axios',
+      component: Axios
     },
     {
       path: '/emotion',
