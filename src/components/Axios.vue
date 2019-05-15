@@ -9,18 +9,19 @@
       <h2>5</h2>
       <h2>6</h2>
     </div> -->
-    <pre ref="cont">
+    <h2 style="background: #ccc; text-align:center;" ref="h2">{{status? '双击屏幕选颜色值': '双击屏幕取消颜色值'}}</h2>
+    <pre ref="cont" @dblclick="stop">
       import axios from "axios";
       import { Loading, Message } from "element-ui";
-      import qs from "qs";
-      import store from "../store/index";
-      import router from "../router/index";
-
-      // axios 配置
-      axios.defaults.timeout = 5000;
-      axios.defaults.baseURL = "api/";
-      //用来处理刷新token后重新请求的自定义变量
-      axios.defaults.isRetryRequest = false;
+      import qs from "qs";                               # &               &&
+      import store from "../store/index";                %    %         *   #
+      import router from "../router/index";               &      *  & *    *
+                                                            *              &
+      // axios 配置                                           ！  🐳  ❤️   %
+      axios.defaults.timeout = 5000;                            @        ¥
+      axios.defaults.baseURL = "api/";                            #     %
+      //用来处理刷新token后重新请求的自定义变量                           *  $
+      axios.defaults.isRetryRequest = false;                           &
 
       //刷新token的请求方法
       function getRefreshToken() {
@@ -136,6 +137,7 @@ export default {
   data(){
     return {
       rgb: '',
+      status: true,
       timer: ''
     }
   },
@@ -147,6 +149,16 @@ export default {
       console.log(this.$refs.cont);
       this.bg3()
       this.$refs.cont.style.color = this.rgb;
+      this.$refs.h2.style.color = this.rgb;
+    },
+    stop() {
+      if(this.status) {
+        clearInterval(this.timer);
+        this.status = false;
+      }else {
+        this.status = true;
+        this.timer = setInterval(this.change, 1000);
+      }
     },
     bg3(){
       var r=Math.floor(Math.random()*256);
