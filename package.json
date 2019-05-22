@@ -15,6 +15,7 @@
     "axios": "^0.18.0",
     "element-ui": "^2.4.9",
     "hover.css": "^2.3.2",
+    "three": "^0.104.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue-week-picker": "^1.1.6",

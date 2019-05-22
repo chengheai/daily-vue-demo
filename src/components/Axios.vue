@@ -1,131 +1,191 @@
 <template>
   <div>
-    <!-- <el-button type="primary" @click="change">改变颜色</el-button> -->
-    <!-- <div class="test" ref='test'>
-      <h2>1</h2>
-      <h2>2</h2>
-      <h2>3</h2>
-      <h2>4</h2>
-      <h2>5</h2>
-      <h2>6</h2>
-    </div> -->
     <h2 style="background: #ccc; text-align:center;" ref="h2">{{status? '双击屏幕选颜色值': '双击屏幕取消颜色值'}}</h2>
     <pre ref="cont" @dblclick="stop">
-      import axios from "axios";
-      import { Loading, Message } from "element-ui";
-      import qs from "qs";                               # &               &&
-      import store from "../store/index";                %    %         *   #
-      import router from "../router/index";               &      *  & *    *
-                                                            *              &
-      // axios 配置                                           ！  🐳  ❤️   %
-      axios.defaults.timeout = 5000;                            @        ¥
-      axios.defaults.baseURL = "api/";                            #     %
-      //用来处理刷新token后重新请求的自定义变量                           *  $
-      axios.defaults.isRetryRequest = false;                           &
+      import axios from 'axios';
+      import Cookies from 'js-cookie';
+      import { Message } from 'element-ui';
+      import router from './../router/index';
+      axios.defaults.timeout = 10000;
 
-      //刷新token的请求方法
-      function getRefreshToken() {
-        //refresh_token使用vuex存在本地的localstorage，之后会详细说
-        let params = {
-          grant_type: "refresh_token",
-          refresh_token: store.state.currentUser.UserRefreshToken
-        };
-        //qs的使用主要是因为该接口需要表单提交的方式传数据，具体使用方法自行百度
-        return axios.post("oauth/token", qs.stringify(params));
-      }
+      var init = {                                              ❤️ 没画好？重画 [更多...]
+        // 记录时间戳
+        timer: null,
+        // 是否调过refresh_token函数
+        isRefresh: false,
+        // 公用提示                                                  🥕🥕🥕         🥕🥕🥕🥕
+        openMessage: function(msg) {                             🥕🥕🥕🥕       🥕🥕🥕🥕🥕
+          Message({                                            🥕🥕🥕🥕🥕     🥕🥕🥕🥕🥕
+            message: msg,                                      🥕🥕🥕🥕🥕  🥕🥕🥕🥕🥕🥕
+            type: 'error',                                      🥕 🥕🥕🥕🥕🥕🥕🥕🥕🥕
+            showClose: true,                                     🥕 🥕🥕🥕🥕🥕🥕🥕🥕🥕🥕
+          });                                                      🥕🥕🥕🥕🥕🥕🥕🥕🥕
+        },                                                           🥕🥕🥕🥕🥕🥕🥕
+        getRefreshToken: function() {                                  🥕🥕🥕🥕🥕🥕
+          let params = {                                                 🥕🥕🥕🥕🥕、
+            refresh_token: Cookies.get('refresh_token'),                   🥕🥕🥕🥕
+          };                                                                 🥕🥕🥕
+          let that = this;                                                     🥕🥕
+          axios({
+            method: 'post',
+            url: `api/v1/refresh_token${params}`,
+          })
+            .then(function(res) {
+              if (res.data.access_token) {
+                // 防止重复调refresh_token接口
+                that.isRefresh = false;
+                let result = res.data;
+                let millisecond = new Date().getTime();
+                let expiresTime = result.expires_in * 1000;
+                let utilTime = millisecond + expiresTime;
+                Cookies.set('access_token', result.access_token, { expires: expiresTime });
+                Cookies.set('utilTime', utilTime);
+                Cookies.set('refresh_token', result.refresh_token);
+                Cookies.set('expires_in', result.expires_in);
+              } else {
+                //刷新token失败只能跳转到登录页重新登录
+                localStorage.clear();
+                Cookies.remove('access_token');
+                Cookies.remove('utilTime');
+                Cookies.remove('expires_in');
+                Cookies.remove('refresh_token');
+                router.replace({
+                  path: '/login',
+                  query: { redirect: router.currentRoute.fullPath },
+                });
+              }
+            })
+            .catch(function(err) {
+              //刷新token失败只能跳转到登录页重新登录
+              get_sys_logout();
+              localStorage.clear();
+              Cookies.remove('access_token');
+              Cookies.remove('utilTime');
+              Cookies.remove('expires_in');
+              Cookies.remove('refresh_token');
+              console.log(err);
+              that.openMessage('登录失效');
+              router.replace({
+                path: '/login',
+                query: { redirect: router.currentRoute.fullPath },
+              });
+            });
+        },
+      };
 
-      // http request 拦截器
-      var loadinginstace;
+      //http request 拦截器
       axios.interceptors.request.use(
         config => {
-          //获取储存在本地的token值
-          let authToken = store.state.currentUser.UserToken;
-          //这边可根据自己的需求设置headers，我司采用basic基本认证
-          if (authToken === null) {
-            authToken = window.btoa("nucleus" + ":" + "nucleus-secret");
-            config.headers.Authorization = `Basic ` + authToken;
-            config.headers["Content-Type"] = "application/x-www-form-urlencoded";
+          config.data = JSON.stringify(config.data);
+          init.timer = new Date().getTime();
+          if (Cookies.get('access_token')) {
+            if ((parseInt(Cookies.get('utilTime')) - init.timer) / (1000 * 60 * 60) < 0) {
+              Cookies.remove('access_token');
+              Cookies.remove('utilTime');
+              Cookies.remove('expires_in');
+              Cookies.remove('refresh_token');
+              get_sys_logout();
+              localStorage.clear();
+              router.replace({
+                path: '/login',
+                query: { redirect: router.currentRoute.fullPath },
+              });
+            }
+            config.headers = {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('access_token')}`,
+            };
           } else {
-            config.headers.Authorization = `Bearer ` + authToken;
+            config.headers = {
+              'Content-Type': 'application/json',
+            };
           }
-
-          //这是element-ui的效果，全页面遮罩，中间带有加载圈
-          loadinginstace = Loading.service({ fullscreen: true });
           return config;
         },
-        err => {
-          //这边是参考上面的链接的，具体有什么用我目前还没测到，反正加载超时不是在这边显示
-          loadinginstace.close();
+        error => {
           Message.error({
-            message: "加载超时"
+            message: '加载超时',
           });
-          return Promise.reject(err);
+          return Promise.reject(error);
         }
       );
 
-      // http response 拦截器
+      //响应拦截器即异常处理
       axios.interceptors.response.use(
         response => {
-          //关闭遮罩层，非常重要，不然页面都不能操作了！
-          loadinginstace.close();
+          if (Cookies.get('utilTime')) {
+            if (!init.isRefresh) {
+              // 是否是到期前30分钟
+              if ((parseInt(Cookies.get('utilTime')) - init.timer) / (1000 * 60 * 60) < 0.5) {
+                init.isRefresh = true;
+                init.getRefreshToken();
+              }
+            }
+          }
           return response;
         },
         err => {
-          if (err.response) {
+          // debugger
+          if (err && err.response) {
             switch (err.response.status) {
-              case 401:
-                let config = err.config;
-                /*用vuex删除token
-                *因为刷新token的接口和登录接口一样
-                *用basic认证和表单提交的方式
-                *需要区别于普通接口调用*/
-                store.dispatch("DelToken");
-                //判断是否已经刷新过token
-                if (!config.isRetryRequest) {
-                  return getRefreshToken()
-                    .then(function(res) {
-                      let data = res.data;
-                      //用vuex重新设置基本信息
-                      store.dispatch("UserLogin", {
-                        username: store.state.currentUser.UserName,
-                        token: data.access_token,
-                        refresh_token: data.refresh_token
-                      });
-                      //修改flag
-                      config.isRetryRequest = true;
-                      //修改原请求的token
-                      let authToken = store.state.currentUser.UserToken;
-                      config.headers.Authorization = `Bearer ` + authToken;
-                      /*这边不需要baseURL是因为会重新请求url
-                      *url中已经包含baseURL的部分了
-                      *如果不修改成空字符串，会变成'api/api/xxxx'的情况*/
-                      config.baseURL = "";
-                      //重新请求
-                      return axios(config);
-                    })
-                    .catch(function() {
-                      //刷新token失败只能跳转到登录页重新登录
-                      store.dispatch("UserLogout");
-                      router.replace({
-                        path: "login",
-                        query: { redirect: router.currentRoute.fullPath }
-                      });
-                      throw err;
-                    });
-                }
+              case 400:
+                console.log('错误请求');
                 break;
+              case 401:
+                //刷新token失败只能跳转到登录页重新登录
+                get_sys_logout();
+                localStorage.clear();
+                Cookies.remove('access_token');
+                Cookies.remove('expires_in');
+                Cookies.remove('utilTime');
+                Cookies.remove('refresh_token');
+                init.openMessage('登录失效');
+                router.replace({
+                  path: '/login',
+                  query: { redirect: router.currentRoute.fullPath },
+                });
+                break;
+              case 403:
+                init.openMessage('拒绝访问');
+                break;
+              case 404:
+                init.openMessage('请求错误,未找到该资源');
+                break;
+              case 405:
+                init.openMessage('请求方法未允许');
+                break;
+              case 408:
+                init.openMessage('请求超时');
+                break;
+              case 500:
+                init.openMessage('服务器端出错');
+                break;
+              case 501:
+                init.openMessage('网络未实现');
+                break;
+              case 502:
+                init.openMessage('网络错误');
+                break;
+              case 503:
+                init.openMessage('服务不可用');
+                break;
+              case 504:
+                init.openMessage('网络超时');
+                break;
+              case 505:
+                init.openMessage('http版本不支持该请求');
+                break;
+              default:
+                init.openMessage(`连接错误${err.response.status}`);
             }
           } else {
-            Message.error({
-              message: "加载超时"
-            });
+            init.openMessage('连接服务器失败');
           }
-          loadinginstace.close();
-          return Promise.reject(err);
+          return Promise.resolve(err.response);
         }
       );
-
       export default axios;
+
     </pre>
   </div>
 </template>
@@ -178,6 +238,7 @@ pre{
   background: #000;
   color: rgb(28, 143, 5);
   font-size: 2em;
+  cursor: pointer;
 }
 .test{
   height: 100vh;

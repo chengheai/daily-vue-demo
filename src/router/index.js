@@ -23,6 +23,7 @@ import Draggable from '@/components/Draggable'
 import Table from '@/components/Table'
 import Input from '@/components/Input'
 import Axios from '@/components/Axios'
+import Heart from '@/components/Heart'
 
 Vue.use(Router)
 
@@ -141,6 +142,11 @@ export default new Router({
       path: '/axios',
       name: 'axios',
       component: Axios
+    },
+    {
+      path: '/heart',
+      name: 'heart',
+      component: Heart
     },
     {
       path: '/emotion',
