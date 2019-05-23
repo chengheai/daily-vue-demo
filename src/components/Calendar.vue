@@ -42,7 +42,7 @@
                 <el-date-picker
                   class="right-pick-btn"
                   style="width: 100%"
-                  :clearable=false
+                  :clearable="false"
                   @change="pickDate"
                   v-model="newDate"
                   type="date"

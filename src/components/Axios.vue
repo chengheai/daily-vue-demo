@@ -79,7 +79,7 @@
           config.data = JSON.stringify(config.data);
           init.timer = new Date().getTime();
           if (Cookies.get('access_token')) {
-            if ((parseInt(Cookies.get('utilTime')) - init.timer) / (1000 * 60 * 60) < 0) {
+            <!-- if ((parseInt(Cookies.get('utilTime')) - init.timer) / (1000 * 60 * 60) < 0) { -->
               Cookies.remove('access_token');
               Cookies.remove('utilTime');
               Cookies.remove('expires_in');
@@ -116,7 +116,7 @@
           if (Cookies.get('utilTime')) {
             if (!init.isRefresh) {
               // 是否是到期前30分钟
-              if ((parseInt(Cookies.get('utilTime')) - init.timer) / (1000 * 60 * 60) < 0.5) {
+              <!-- if ((parseInt(Cookies.get('utilTime')) - init.timer) / (1000 * 60 * 60) < 0.5) { -->
                 init.isRefresh = true;
                 init.getRefreshToken();
               }
@@ -193,54 +193,54 @@
 <script>
 /* eslint-disable */
 export default {
-  name: 'axios',
-  data(){
+  name: "axios",
+  data() {
     return {
-      rgb: '',
+      rgb: "",
       status: true,
-      timer: ''
-    }
+      timer: ""
+    };
   },
-  mounted(){
+  mounted() {
     this.timer = setInterval(this.change, 1000);
   },
   methods: {
     change() {
       console.log(this.$refs.cont);
-      this.bg3()
+      this.bg3();
       this.$refs.cont.style.color = this.rgb;
       this.$refs.h2.style.color = this.rgb;
     },
     stop() {
-      if(this.status) {
+      if (this.status) {
         clearInterval(this.timer);
         this.status = false;
-      }else {
+      } else {
         this.status = true;
         this.timer = setInterval(this.change, 1000);
       }
     },
-    bg3(){
-      var r=Math.floor(Math.random()*256);
-      var g=Math.floor(Math.random()*256);
-      var b=Math.floor(Math.random()*256);
-      this.rgb = "rgb("+r+','+g+','+b+")";//所有方法的拼接都可以用ES6新特性`其他字符串{$变量名}`替换
+    bg3() {
+      var r = Math.floor(Math.random() * 256);
+      var g = Math.floor(Math.random() * 256);
+      var b = Math.floor(Math.random() * 256);
+      this.rgb = "rgb(" + r + "," + g + "," + b + ")"; //所有方法的拼接都可以用ES6新特性`其他字符串{$变量名}`替换
     }
   },
   beforeDestroy() {
     clearInterval(this.timer);
   }
-}
+};
 </script>
 
 <style scoped>
-pre{
+pre {
   background: #000;
   color: rgb(28, 143, 5);
   font-size: 2em;
   cursor: pointer;
 }
-.test{
+.test {
   height: 100vh;
   width: 100vw;
   font-size: 2em;

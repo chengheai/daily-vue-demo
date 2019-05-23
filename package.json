@@ -18,7 +18,7 @@
     "three": "^0.104.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vue-week-picker": "^1.1.6",
+    "vue-week-picker": "^1.1.8",
     "vuex": "^3.1.0"
   },
   "devDependencies": {
