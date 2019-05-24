@@ -181,7 +181,7 @@
           } else {
             init.openMessage('连接服务器失败');
           }
-          return Promise.resolve(err.response);
+          return Promise.reject(err.response);
         }
       );
       export default axios;
