@@ -17,6 +17,7 @@
     "hover.css": "^2.3.2",
     "three": "^0.104.0",
     "vue": "^2.5.2",
+    "vue-fullcalendar": "^1.0.9",
     "vue-router": "^3.0.1",
     "vue-week-picker": "^1.1.8",
     "vuex": "^3.1.0"

@@ -9,6 +9,7 @@ import animated from 'animate.css'
 import axios from 'axios'
 import store from './store'
 import _ from 'lodash'
+import fullCalendar from 'vue-fullcalendar'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'element-ui/lib/theme-chalk/display.css'
 

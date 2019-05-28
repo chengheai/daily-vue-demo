@@ -24,142 +24,148 @@ import Table from '@/components/Table'
 import Input from '@/components/Input'
 import Axios from '@/components/Axios'
 import Heart from '@/components/Heart'
-
+import Fullcalendar from '@/components/Fullcalendar';
+/* eslint-disable */
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/dashboard'
+      redirect: '/dashboard',
     },
     {
       path: '/dashboard',
       name: 'Dashboard',
-      component: Dashboard
+      component: Dashboard,
     },
     {
       path: '/element',
       name: 'Element',
-      component: Element
+      component: Element,
     },
     {
       path: '/upload-file',
       name: 'UploadFile',
-      component: UploadFile
+      component: UploadFile,
     },
     {
       path: '/computed',
       name: 'Computed',
-      component: Computed
+      component: Computed,
     },
     {
       path: '/draggable',
       name: 'Draggable',
-      component: Draggable
+      component: Draggable,
     },
     {
       path: '/lodash',
       name: 'Lodash',
-      component: Lodash
+      component: Lodash,
     },
     {
       path: '/switch',
       name: 'Switch',
-      component: Switch
+      component: Switch,
     },
     {
       path: '/savedPosition',
       name: 'savedPosition',
-      component: savedPosition
+      component: savedPosition,
     },
     {
       path: '/transition',
       name: 'Transition',
-      component: Transition
+      component: Transition,
     },
     {
       path: '/gugong',
       name: 'Gugong',
-      component: Gugong
+      component: Gugong,
     },
     {
       path: '/search',
       name: 'Search',
-      component: Search
+      component: Search,
     },
     {
       path: '/calendar',
       name: 'Calendar',
-      component: Calendar
+      component: Calendar,
     },
     {
       path: '/calendar1',
       name: 'Calendar1',
-      component: Calendar1
+      component: Calendar1,
     },
     {
       path: '/lodash1',
       name: 'lodash1',
-      component: Lodash1
+      component: Lodash1,
     },
     {
       path: '/es6',
       name: 'es6',
-      component: Es6
+      component: Es6,
     },
     {
       path: '/learning',
       name: 'learning',
-      component: Learning
+      component: Learning,
     },
     {
       path: '/timedisable',
       name: 'timedisable',
-      component: TimeDisable
+      component: TimeDisable,
     },
     {
       path: '/blur',
       name: 'blur',
-      component: Blur
+      component: Blur,
     },
     {
       path: '/conghu',
       name: 'conghu',
-      component: Conghu
+      component: Conghu,
     },
     {
       path: '/input',
       name: 'input',
-      component: Input
+      component: Input,
     },
     {
       path: '/table',
       name: 'table',
-      component: Table
+      component: Table,
     },
     {
       path: '/axios',
       name: 'axios',
-      component: Axios
+      component: Axios,
     },
     {
       path: '/heart',
       name: 'heart',
-      component: Heart
+      component: Heart,
     },
     {
       path: '/emotion',
       name: 'Emotion',
-      component: Emotion
-    }
+      component: Emotion,
+    },
+    {
+      path: '/fullcalendar',
+      name: 'Fullcalendar',
+      component: Fullcalendar,
+    },
   ],
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     console.log(savedPosition);
     if (savedPosition) {
-      return savedPosition
+      return savedPosition;
     } else {
-      return { x: 0, y: 0 }
+      return { x: 0, y: 0 };
     }
-  }
-})
+  },
+});

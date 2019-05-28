@@ -45,7 +45,8 @@ export default {
         return o.a === 1;
       })
       // c开头的已结束
-
+      let arr = [{name: 'a', age: 2, sex: 'male'},{name: 'b', age: 1, sex: 'famale'}];
+      console.log(_.groupBy(arr, 'name'));
     }
   }
 };
