@@ -25,6 +25,7 @@ import Input from '@/components/Input'
 import Axios from '@/components/Axios'
 import Heart from '@/components/Heart'
 import Fullcalendar from '@/components/Fullcalendar';
+import nextTick from '@/components/nextTick';
 /* eslint-disable */
 Vue.use(Router)
 
@@ -158,6 +159,11 @@ export default new Router({
       path: '/fullcalendar',
       name: 'Fullcalendar',
       component: Fullcalendar,
+    },
+    {
+      path: '/next-tick',
+      name: 'nextTick',
+      component: nextTick,
     },
   ],
   scrollBehavior(to, from, savedPosition) {

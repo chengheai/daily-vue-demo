@@ -15,7 +15,7 @@ var demoEvents = [
     title: "event2",
     start: "2019-05-28",
     end: "2019-05-28",
-    cssClass: ["career"],
+    cssClass: "career",
     YOUR_DATA: {}
   }
 ];
@@ -31,5 +31,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang='less' scoped>
+/deep/ .career{
+  color: red !important;
+}
+.family{
+  color: blue;
+}
 </style>
