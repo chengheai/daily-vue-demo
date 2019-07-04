@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-header><h2>DEMO 测试</h2></el-header>
+    <el-header><h2>Vue DEMO 测试</h2></el-header>
     <span class="sedtitle">{{msg}}</span>
     <router-view/>
   </div>
