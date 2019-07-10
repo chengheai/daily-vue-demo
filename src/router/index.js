@@ -25,6 +25,7 @@ import Input from '@/components/Input'
 import Axios from '@/components/Axios'
 import Heart from '@/components/Heart'
 import Fullcalendar from '@/components/Fullcalendar';
+import KeyCodes from '@/components/KeyCodes';
 import nextTick from '@/components/nextTick';
 /* eslint-disable */
 Vue.use(Router)
@@ -165,6 +166,11 @@ export default new Router({
       name: 'nextTick',
       component: nextTick,
     },
+    {
+      path: '/keycode',
+      name: 'keycode',
+      component: KeyCodes,
+    }
   ],
   scrollBehavior(to, from, savedPosition) {
     console.log(savedPosition);
