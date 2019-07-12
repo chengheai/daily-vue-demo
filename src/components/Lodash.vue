@@ -1,6 +1,7 @@
 <template>
   <div style="background: #333; color: #fff;">
     <el-row>
+      <h3>_.flow {{addSquare(1,2)}}</h3>
       <el-col :span="11">{{results}}</el-col>
       <el-col class="heals" :span="2"></el-col>
       <el-col :span="11">
@@ -29,6 +30,7 @@ export default {
     return {
       results: [],
       result1: [],
+      addSquare: null,
       result2: []
     };
   },
@@ -118,7 +120,11 @@ export default {
     console.log(_.reject(users1, 'active'));
   },
   methods: {
+    square(n) {
+      return n * n
+    },
     init() {
+      this.addSquare = _.flow([_.add, this.square])
       this.results = results;
       this.result1 = _.take(results, 3);
       this.result2 = _.each(this.result1, function(values, key, items) {
