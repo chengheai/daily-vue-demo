@@ -133,6 +133,11 @@
         <el-button type="danger">KeyCodes</el-button>
       </router-link>
     </el-col>
+    <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+      <router-link to="/pdf" tag="li">
+        <el-button type="warning">Pdf</el-button>
+      </router-link>
+    </el-col>
   </div>
 </template>
 

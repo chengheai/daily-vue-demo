@@ -26,6 +26,7 @@ import Axios from '@/components/Axios'
 import Heart from '@/components/Heart'
 import Fullcalendar from '@/components/Fullcalendar';
 import KeyCodes from '@/components/KeyCodes';
+import Pdf from '@/components/Pdf';
 import nextTick from '@/components/nextTick';
 /* eslint-disable */
 Vue.use(Router)
@@ -170,7 +171,12 @@ export default new Router({
       path: '/keycode',
       name: 'keycode',
       component: KeyCodes,
-    }
+    },
+    {
+      path: '/pdf',
+      name: 'pdf',
+      component: Pdf,
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     console.log(savedPosition);
