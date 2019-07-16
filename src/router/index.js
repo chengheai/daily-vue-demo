@@ -27,6 +27,7 @@ import Heart from '@/components/Heart'
 import Fullcalendar from '@/components/Fullcalendar';
 import KeyCodes from '@/components/KeyCodes';
 import Pdf from '@/components/Pdf';
+import NoteImage from '@/components/NoteImage';
 import nextTick from '@/components/nextTick';
 /* eslint-disable */
 Vue.use(Router)
@@ -176,6 +177,11 @@ export default new Router({
       path: '/pdf',
       name: 'pdf',
       component: Pdf,
+    },
+    {
+      path: '/note-image',
+      name: 'note-image',
+      component: NoteImage,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
