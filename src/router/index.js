@@ -30,6 +30,7 @@ import Pdf from '@/components/Pdf';
 import NoteImage from '@/components/NoteImage';
 import nextTick from '@/components/nextTick';
 import Drawer from '@/components/Drawer';
+import CopyBoard from '@/components/CopyBoard';
 /* eslint-disable */
 Vue.use(Router)
 
@@ -188,6 +189,11 @@ export default new Router({
       path: '/drawer',
       name: 'drawer',
       component: Drawer,
+    },
+    {
+      path: '/copy-board',
+      name: 'CopyBoard',
+      component: CopyBoard,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
