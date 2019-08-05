@@ -29,6 +29,7 @@ import KeyCodes from '@/components/KeyCodes';
 import Pdf from '@/components/Pdf';
 import NoteImage from '@/components/NoteImage';
 import nextTick from '@/components/nextTick';
+import Drawer from '@/components/Drawer';
 /* eslint-disable */
 Vue.use(Router)
 
@@ -182,6 +183,11 @@ export default new Router({
       path: '/note-image',
       name: 'note-image',
       component: NoteImage,
+    },
+    {
+      path: '/drawer',
+      name: 'drawer',
+      component: Drawer,
     },
   ],
   scrollBehavior(to, from, savedPosition) {

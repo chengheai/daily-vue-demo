@@ -143,6 +143,11 @@
         <el-button type="warning">NoteImage</el-button>
       </router-link>
     </el-col>
+    <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+      <router-link to="/drawer" tag="li">
+        <el-button type="warning">drawer</el-button>
+      </router-link>
+    </el-col>
   </div>
 </template>
 
