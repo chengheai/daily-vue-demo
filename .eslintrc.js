@@ -26,6 +26,7 @@ module.exports = {
     "space-before-function-paren": 0,
     "semi": 0, // 末尾有分号没分好都可以
     'comma-dangle': 0,
+    'quotes': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }
