@@ -1,6 +1,10 @@
-if (isset($_FILES['myFile'])) {
-  move_uploaded_file($_FILES['myFile']['tmp_name'], 'uploads/' . $_FILES['myFile']['name']);
-  echo 'OK';
-} else {
-  echo 'No file specified';
-}
+<?php
+    $imgname = $_FILES['myfile']['name'];
+    $tmp = $_FILES['myfile']['tmp_name'];
+    $filepath = 'photo/';
+    if(move_uploaded_file($tmp,$filepath.$imgname.".png")){
+        echo "上传成功";
+    }else{
+        echo "上传失败";
+    }
+?>

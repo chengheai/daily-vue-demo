@@ -32,6 +32,7 @@ import nextTick from '@/components/nextTick';
 import Drawer from '@/components/Drawer';
 import CopyBoard from '@/components/CopyBoard';
 import drawer1 from '@/components/drawer1';
+import quillEditor from '@/components/quillEditor';
 /* eslint-disable */
 Vue.use(Router)
 
@@ -195,6 +196,11 @@ export default new Router({
       path: '/copy-board',
       name: 'CopyBoard',
       component: CopyBoard,
+    },
+    {
+      path: '/quill-editor',
+      name: 'quillEditor',
+      component: quillEditor,
     },
     {
       path: '/drawer1',
