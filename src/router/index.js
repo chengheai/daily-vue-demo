@@ -33,6 +33,7 @@ import Drawer from '@/components/Drawer';
 import CopyBoard from '@/components/CopyBoard';
 import drawer1 from '@/components/drawer1';
 import quillEditor from '@/components/quillEditor';
+import MouseView from '@/components/MouseView'
 /* eslint-disable */
 Vue.use(Router)
 
@@ -206,6 +207,11 @@ export default new Router({
       path: '/drawer1',
       name: 'drawer1',
       component: drawer1,
+    },
+    {
+      path: '/mouse-view',
+      name: 'MouseView',
+      component: MouseView,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
