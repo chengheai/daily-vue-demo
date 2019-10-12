@@ -34,6 +34,7 @@ import CopyBoard from '@/components/CopyBoard';
 import drawer1 from '@/components/drawer1';
 import quillEditor from '@/components/quillEditor';
 import MouseView from '@/components/MouseView'
+import UnWatch from '@/components/UnWatch'
 /* eslint-disable */
 Vue.use(Router)
 
@@ -212,6 +213,11 @@ export default new Router({
       path: '/mouse-view',
       name: 'MouseView',
       component: MouseView,
+    },
+    {
+      path: '/un-watch',
+      name: 'UnWatch',
+      component: UnWatch,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
