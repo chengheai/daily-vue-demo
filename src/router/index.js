@@ -1,29 +1,29 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Dashboard from '@/components/Dashboard'
-import Element from '@/components/Element'
-import Computed from '@/components/Computed'
-import Lodash from '@/components/Lodash'
-import Lodash1 from '@/components/Lodash1'
-import Switch from '@/components/Switch'
-import savedPosition from '@/components/savedPosition'
-import Transition from '@/components/Transition'
-import Gugong from '@/components/Gugong'
-import Search from '@/components/Search'
-import Calendar from '@/components/Calendar'
-import Calendar1 from '@/components/Calendar.1'
-import Emotion from '@/components/Emotion'
-import Es6 from '@/components/Es6'
-import TimeDisable from '@/components/TimeDisable'
-import Learning from '@/components/Learning'
-import Blur from '@/components/Blur'
-import Conghu from '@/components/Conghu'
-import UploadFile from '@/components/UploadFile'
-import Draggable from '@/components/Draggable'
-import Table from '@/components/Table'
-import Input from '@/components/Input'
-import Axios from '@/components/Axios'
-import Heart from '@/components/Heart'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Dashboard from '@/components/Dashboard';
+import Element from '@/components/Element';
+import Computed from '@/components/Computed';
+import Lodash from '@/components/Lodash';
+import Lodash1 from '@/components/Lodash1';
+import Switch from '@/components/Switch';
+import savedPosition from '@/components/savedPosition';
+import Transition from '@/components/Transition';
+import Gugong from '@/components/Gugong';
+import Search from '@/components/Search';
+import Calendar from '@/components/Calendar';
+import Calendar1 from '@/components/Calendar.1';
+import Emotion from '@/components/Emotion';
+import Es6 from '@/components/Es6';
+import TimeDisable from '@/components/TimeDisable';
+import Learning from '@/components/Learning';
+import Blur from '@/components/Blur';
+import Conghu from '@/components/Conghu';
+import UploadFile from '@/components/UploadFile';
+import Draggable from '@/components/Draggable';
+import Table from '@/components/Table';
+import Input from '@/components/Input';
+import Axios from '@/components/Axios';
+import Heart from '@/components/Heart';
 import Fullcalendar from '@/components/Fullcalendar';
 import KeyCodes from '@/components/KeyCodes';
 import Pdf from '@/components/Pdf';
@@ -33,10 +33,14 @@ import Drawer from '@/components/Drawer';
 import CopyBoard from '@/components/CopyBoard';
 import drawer1 from '@/components/drawer1';
 import quillEditor from '@/components/quillEditor';
-import MouseView from '@/components/MouseView'
-import UnWatch from '@/components/UnWatch'
+
+import MouseView from '@/components/MouseView';
+import UnWatch from '@/components/UnWatch';
+
+import Select from '@/components/Select';
+
 /* eslint-disable */
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -218,6 +222,11 @@ export default new Router({
       path: '/un-watch',
       name: 'UnWatch',
       component: UnWatch,
+    },
+    {
+      path: '/select',
+      name: 'select',
+      component: Select,
     },
   ],
   scrollBehavior(to, from, savedPosition) {

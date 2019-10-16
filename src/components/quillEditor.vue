@@ -1,12 +1,12 @@
 <template>
   <div>
-    <!-- <form action="/dopost" method="post" enctype="multipart/form-data">
-      图片:
-      <input type="file" name="image" />
-      <br />
-      <button>提交</button>
-      <br />
-    </form>-->
+     <el-form-item label="文件" label-width="120px">
+        <el-upload class="upload-demo" action="" :auto-upload="false" :limit="1" ref="upload" :http-request="upload" multiple>
+          <el-button size="small" type="primary">模拟上传2</el-button>
+        </el-upload>
+      </el-form-item>
+ <el-button class="btn" size="small" type="primary" @click="upload">确定上传2</el-button>
+
     <p>富文本内容：{{detailContent}}</p>
     <!-- 图片上传组件辅助-->
     <el-upload
@@ -82,6 +82,20 @@ export default {
     };
   },
   methods: {
+    upload() {
+      const formData = new FormData()
+      const file = this.$refs.upload;
+      const headerConfig = { headers: { 'Content-Type': 'multipart/form-data' }}
+      if (!file) { // 若未选择文件
+        alert('请选择文件')
+        return
+      }
+      formData.append('file', file.raw)
+      axios.post('http://localhost:3000/upload', formData, headerConfig).then(res => {
+        console.log(res)
+      })
+    },
+
     onEditorReady(quill) {
       console.log('editor ready!', quill);
     },
