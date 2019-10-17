@@ -11,7 +11,9 @@
     </el-select>
   </el-form-item>
   <el-form-item>
-    <el-button type="primary" :disabled="sendButtonStatus" @click="onSubmit">查询</el-button>
+    <el-button type="primary" @click="onSubmit(1)">watch</el-button>
+    <el-button type="primary" :loading="isWatching">watching</el-button>
+    <el-button type="primary" @click="onSubmit(2)">unwatch</el-button>
   </el-form-item>
 </el-form>
   </div>
@@ -21,7 +23,7 @@
 export default {
   data() {
     return {
-      sendButtonStatus: false,
+      isWatching: true,
       formInline: {
         user: "",
         region: ""
@@ -32,14 +34,19 @@ export default {
     formInline: {
       deep: true,
       handler() {
-        this.sendButtonStatus = true;
+        this.isWatching = true;
       }
     }
   },
   methods: {
-    onSubmit() {
-      console.log("submit!");
+    onSubmit(type) {
+      if (type === 1) {
+      } else {
+      }
     }
+  },
+  created() {
+    var unwatch = this.$watch();
   }
 };
 </script>

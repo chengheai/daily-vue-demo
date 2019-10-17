@@ -1,21 +1,21 @@
 <template>
-  <div>
-    <el-form :model="ruleForm" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-      <div v-for="(item, index) in ruleForm.list" :key="index">
-        <el-select v-model="item.type" clearable @change="selectChange(item.type,index)" placeholder="请选择">
-          <el-option
-            v-for="(item,optionIndex)  in options"
-            :key="optionIndex"
-            :label="item.label"
-            :disabled="getDisable(item.value)"
-            :value="item.value"
-          ></el-option>
-        </el-select>
-        <i v-if="index === 0 && ruleForm.list[0].type !== '' && ruleForm.list.length<2" class="el-icon-circle-plus-outline ico" @click="add"></i>
-        <i v-if="index !==0" class="el-icon-remove-outline ico" @click="del(index)"></i>
-      </div>
-    </el-form>
-  </div>
+  <div>
+    <el-form :model="ruleForm" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+      <div v-for="(item, index) in ruleForm.list" :key="index">
+        <el-select v-model="item.type" clearable @change="selectChange(item.type,index)" placeholder="请选择">
+          <el-option
+            v-for="(item,optionIndex) in options"
+            :key="item.value"
+            :label="item.label"
+            :disabled="getDisable(item.value)"
+            :value="item.value"
+          ></el-option>
+        </el-select>
+        <i v-if="index === 0 && ruleForm.list[0].type !== '' && ruleForm.list.length<2" class="el-icon-circle-plus-outline ico" @click="add">+</i>
+        <i v-if="index !==0" class="el-icon-remove-outline ico" @click="del(index)">-</i>
+      </div>
+    </el-form>
+  </div>
 </template>
 
 <script>
@@ -54,6 +54,7 @@ export default {
           value: 2
         }
       ],
+      // 记录选中项的index
       selectedOptions: []
     };
   },
@@ -87,8 +88,8 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-.ico{
-  font-size: 40px;
+<style scoped>
+.ico {
+    font-size: 40px;
 }
 </style>
