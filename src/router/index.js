@@ -36,6 +36,7 @@ import quillEditor from '@/components/quillEditor';
 
 import MouseView from '@/components/MouseView';
 import UnWatch from '@/components/UnWatch';
+import Reduce from '@/components/Reduce';
 
 import Select from '@/components/Select';
 
@@ -227,6 +228,11 @@ export default new Router({
       path: '/select',
       name: 'select',
       component: Select,
+    },
+    {
+      path: '/reduce',
+      name: 'reduce',
+      component: Reduce,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
