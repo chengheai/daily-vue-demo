@@ -2,7 +2,12 @@
   <div>
     <el-form :model="ruleForm" ref="ruleForm" label-width="100px" class="demo-ruleForm">
       <div v-for="(item, index) in ruleForm.list" :key="index">
-        <el-select v-model="item.type" clearable @change="selectChange(item.type,index)" placeholder="请选择">
+        <el-select
+          v-model="item.type"
+          clearable
+          @change="selectChange(item.type,index)"
+          placeholder="请选择"
+        >
           <el-option
             v-for="(item,optionIndex)  in options"
             :key="optionIndex"
@@ -11,7 +16,11 @@
             :value="item.value"
           ></el-option>
         </el-select>
-        <i v-if="index === 0 && ruleForm.list[0].type !== '' && ruleForm.list.length<2" class="el-icon-circle-plus-outline ico" @click="add"></i>
+        <i
+          v-if="index === 0 && ruleForm.list[0].type !== '' && ruleForm.list.length<2"
+          class="el-icon-circle-plus-outline ico"
+          @click="add"
+        ></i>
         <i v-if="index !==0" class="el-icon-remove-outline ico" @click="del(index)"></i>
       </div>
     </el-form>
@@ -19,10 +28,11 @@
 </template>
 
 <script>
+/* eslint-disable */
 // 添加数组自定义事件 用来删除数组中的某一项
 Array.prototype.indexOf = function(val) {
   for (var i = 0; i < this.length; i++) {
-    if (this[i] == val) {
+    if (this[i] === val) {
       return i;
     }
   }
@@ -40,21 +50,21 @@ export default {
       ruleForm: {
         list: [
           {
-            type: ""
-          }
-        ]
+            type: '',
+          },
+        ],
       },
       options: [
         {
-          label: "中国",
-          value: 1
+          label: '中国',
+          value: 1,
         },
         {
-          label: "美国",
-          value: 2
-        }
+          label: '美国',
+          value: 2,
+        },
       ],
-      selectedOptions: []
+      selectedOptions: [],
     };
   },
   methods: {
@@ -72,7 +82,7 @@ export default {
     },
     add() {
       this.ruleForm.list.push({
-        type: ""
+        type: '',
       });
     },
     del(index) {
@@ -82,13 +92,13 @@ export default {
       }
       console.log(this.selectedOptions);
       this.ruleForm.list.splice(index, 1);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="less" scoped>
-.ico{
+.ico {
   font-size: 40px;
 }
 </style>

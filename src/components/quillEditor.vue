@@ -32,6 +32,7 @@
   </div>
 </template>
 <script>
+/* eslint-disable */
 // 工具栏配置
 const toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike'], // toggled buttons
