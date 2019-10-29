@@ -39,6 +39,7 @@ import UnWatch from '@/components/UnWatch';
 import Reduce from '@/components/Reduce';
 
 import Select from '@/components/Select';
+import Iframe from '@/components/Iframe';
 
 /* eslint-disable */
 Vue.use(Router);
@@ -233,6 +234,11 @@ export default new Router({
       path: '/reduce',
       name: 'reduce',
       component: Reduce,
+    },
+    {
+      path: '/iframe',
+      name: 'iframe',
+      component: Iframe,
     },
   ],
   scrollBehavior(to, from, savedPosition) {

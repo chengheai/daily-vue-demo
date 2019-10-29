@@ -173,6 +173,11 @@
         <el-button type="primary">select</el-button>
       </router-link>
     </el-col>
+    <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+      <router-link to="/iframe" tag="li">
+        <el-button type="primary">iframe</el-button>
+      </router-link>
+    </el-col>
   </div>
 </template>
 
@@ -180,36 +185,36 @@
 /* eslint-disable */
 var hour = new Date().getHours();
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   data() {
     return {
-      greeting: "Welcome to Your Vue.js App"
+      greeting: 'Welcome to Your Vue.js App',
     };
   },
   methods: {
     greet() {
       if (hour < 6) {
-        this.greeting = "凌晨好";
+        this.greeting = '凌晨好';
       } else if (hour < 9) {
-        this.greeting = "早上好";
+        this.greeting = '早上好';
       } else if (hour < 12) {
-        this.greeting = "上午好";
+        this.greeting = '上午好';
       } else if (hour < 14) {
-        this.greeting = "中午好";
+        this.greeting = '中午好';
       } else if (hour < 17) {
-        this.greeting = "下午好";
+        this.greeting = '下午好';
       } else if (hour < 19) {
-        this.greeting = "傍晚好";
+        this.greeting = '傍晚好';
       } else if (hour < 22) {
-        this.greeting = "晚上好";
+        this.greeting = '晚上好';
       } else {
-        this.greeting = "夜深了吗, 早点休息";
+        this.greeting = '夜深了吗, 早点休息';
       }
-    }
+    },
   },
   mounted() {
     this.greet();
-  }
+  },
 };
 </script>
 
