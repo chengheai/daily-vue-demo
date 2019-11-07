@@ -40,6 +40,7 @@ import Reduce from '@/components/Reduce';
 
 import Select from '@/components/Select';
 import Iframe from '@/components/Iframe';
+import Orientation from '@/components/Orientation';
 
 /* eslint-disable */
 Vue.use(Router);
@@ -239,6 +240,11 @@ export default new Router({
       path: '/iframe',
       name: 'iframe',
       component: Iframe,
+    },
+    {
+      path: '/orientation',
+      name: 'orientation',
+      component: Orientation,
     },
   ],
   scrollBehavior(to, from, savedPosition) {

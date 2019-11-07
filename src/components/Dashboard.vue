@@ -178,6 +178,11 @@
         <el-button type="primary">iframe</el-button>
       </router-link>
     </el-col>
+    <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+      <router-link to="/orientation" tag="li">
+        <el-button type="primary">orientation</el-button>
+      </router-link>
+    </el-col>
   </div>
 </template>
 
