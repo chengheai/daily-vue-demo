@@ -41,6 +41,7 @@ import Reduce from '@/components/Reduce';
 import Select from '@/components/Select';
 import Iframe from '@/components/Iframe';
 import Orientation from '@/components/Orientation';
+import Watermark from '@/components/Watermark';
 
 /* eslint-disable */
 Vue.use(Router);
@@ -245,6 +246,11 @@ export default new Router({
       path: '/orientation',
       name: 'orientation',
       component: Orientation,
+    },
+    {
+      path: '/watermark',
+      name: 'watermark',
+      component: Watermark,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
