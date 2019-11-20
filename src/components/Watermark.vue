@@ -5,10 +5,7 @@
         <p>选择图片</p>
         <el-button type="text" style="color: #c00;"
           ><label for="uploads">
-            <i
-              class="el-icon-upload el-icon--righ"
-              style="margin-right: 5px;"
-            ></i>
+            <i class="el-icon-upload2" style="margin-right: 5px;"></i>
             选择需要添加水印的图片</label
           ></el-button
         >
@@ -53,15 +50,26 @@
         :max="50"
       ></el-slider>
     </div>
-    <div class="preview">
-      <img :src="preImg || defaultimg" alt="" />
-      <div class="watermark" :style="{ background: paint }"></div>
+    <div>
+      <el-button
+        @click="handleDown"
+        class="download-btn"
+        type="primary"
+        plain
+        icon="el-icon-download"
+        >下载水印图片</el-button
+      >
+      <div class="preview" ref="previewImg">
+        <img :src="preImg || defaultimg" alt="" />
+        <div class="watermark" :style="{ background: paint }"></div>
+      </div>
     </div>
   </div>
 </template>
 <script>
 /* eslint-disable */
 import defaultimg from "./../assets/dog.jpg";
+import DomToImage from "dom-to-image";
 export default {
   data() {
     return {
@@ -103,6 +111,24 @@ export default {
       reader.readAsDataURL(file);
       // 转化为blob
       // reader.readAsArrayBuffer(file)
+    },
+    handleDown() {
+      let node = this.$refs.previewImg;
+      let that = this;
+      DomToImage.toPng(node)
+        .then(function(dataUrl) {
+          var oLink = document.createElement("a");
+          oLink.download = "水印图片.png";
+          oLink.href = dataUrl;
+          oLink.click();
+          that.$nextTick(() => {
+            that.$message.success("水印图片下载成功");
+          });
+        })
+        .catch(function(error) {
+          console.error("oops, something went wrong!", error);
+          that.$message.error("下载失败");
+        });
     }
   },
   computed: {
@@ -150,13 +176,16 @@ export default {
     margin-bottom: 10px;
     font-weight: 600;
   }
+  .download-btn {
+    margin: 0 15px 15px;
+  }
   .optea {
     width: 500px;
   }
   .preview {
     position: relative;
     margin-left: 20px;
-    min-width: 600px;
+    min-width: 750px;
     img {
       width: 100%;
       height: 100%;
