@@ -20,8 +20,9 @@ import 'quill/dist/quill.snow.css';
 import 'quill/dist/quill.bubble.css';
 
 import Moast from './../src/com/dialog';
-
 Vue.use(Moast);
+import myalert from './../src/com/myalert' //这里引入的是js文件 
+Vue.prototype.$myalert = myalert;
 
 Vue.use(VueQuillEditor /* { default global options } */);
 
@@ -31,7 +32,7 @@ Vue.prototype.$http = axios;
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
 Vue.use(animated);
-Vue.prototype.validForbid = function(value, number = 255) {
+Vue.prototype.validForbid = function (value, number = 255) {
   value = value
     .replace(
       /[`~!@#$%^&*()_\-+=<>?:"{}|,./;'\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/g,
@@ -46,7 +47,7 @@ Vue.prototype.validForbid = function(value, number = 255) {
   }
   return value;
 };
-Vue.prototype.validSe = function(value, number = 255) {
+Vue.prototype.validSe = function (value, number = 255) {
   value = value
     .replace(
       /[`~!@#$%^&*()_\-+=<>?:"{}|,./;'\\[\]·~！@#￥%……&*（）——\-+={}|《》？：“”【】、；‘’，。、]/g,
