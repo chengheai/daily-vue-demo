@@ -14,6 +14,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import 'element-ui/lib/theme-chalk/display.css';
 import VueQuillEditor from 'vue-quill-editor';
 
+import 'nprogress/nprogress.css';
 // require styles
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';

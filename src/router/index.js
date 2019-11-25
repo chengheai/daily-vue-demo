@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import NProgress from 'nprogress';
 import Router from 'vue-router';
 import Dashboard from '@/components/Dashboard';
 import Element from '@/components/Element';
@@ -44,10 +45,12 @@ import Orientation from '@/components/Orientation';
 import Watermark from '@/components/Watermark';
 import TestF from '@/components/TestF';
 
+// 配置NProgress进度条选项  —— 动画效果
+NProgress.configure({ ease: 'ease', speed: 500 })
 /* eslint-disable */
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -267,4 +270,20 @@ export default new Router({
       return { x: 0, y: 0 };
     }
   },
-});
+})
+
+// 全局路由拦截-进入页面前执行
+router.beforeEach((to, from, next) => {
+  // NProgress开始进度条
+  NProgress.start()
+  next()
+})
+
+// 全局后置钩子-常用于结束动画等
+router.afterEach(transition => {
+  // NProgress结束进度条
+  NProgress.done()
+  // console.log(transition)
+})
+
+export default router
