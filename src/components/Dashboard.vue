@@ -223,7 +223,7 @@ export default {
       } else if (hour < 22) {
         this.greeting = '晚上好';
       } else {
-        this.greeting = '夜深了吗, 早点休息';
+        this.greeting = '夜深了, 早点休息';
       }
     },
   },
