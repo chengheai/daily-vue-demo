@@ -1,7 +1,14 @@
 <template>
   <div>
     <el-header>
-      <el-button type="text" style="color: red;" @click="handleDash" icon="el-icon-arrow-left">返回</el-button>
+      <el-button
+        type="text"
+        v-if="title !== '首页'"
+        style="color: red;"
+        @click="handleDash"
+        icon="el-icon-arrow-left"
+      >返回</el-button>
+      <h4 v-else>Home</h4>
       <h2>Vue DEMO 测试</h2>
       <h3>当前位置 [ {{title}} ]</h3>
     </el-header>
