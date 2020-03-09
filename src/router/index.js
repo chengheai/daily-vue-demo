@@ -44,6 +44,7 @@ import Iframe from '@/components/Iframe';
 import Orientation from '@/components/Orientation';
 import Watermark from '@/components/Watermark';
 import TestF from '@/components/TestF';
+import Datepicker from '@/components/Datepicker';
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: 'ease', speed: 500 });
@@ -382,6 +383,14 @@ const router = new Router({
       component: TestF,
       meta: {
         title: '测试雷区',
+      },
+    },
+    {
+      path: '/date-picker',
+      name: 'date-picker',
+      component: Datepicker,
+      meta: {
+        title: '自定义时间限制',
       },
     },
   ],
