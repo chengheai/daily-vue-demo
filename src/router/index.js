@@ -45,6 +45,7 @@ import Orientation from '@/components/Orientation';
 import Watermark from '@/components/Watermark';
 import TestF from '@/components/TestF';
 import Datepicker from '@/components/Datepicker';
+import Checkoutbox from '@/components/Checkoutbox';
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: 'ease', speed: 500 });
@@ -391,6 +392,14 @@ const router = new Router({
       component: Datepicker,
       meta: {
         title: '自定义时间限制',
+      },
+    },
+    {
+      path: '/checkoutbox',
+      name: 'checkoutbox',
+      component: Checkoutbox,
+      meta: {
+        title: '嵌套el-checkout',
       },
     },
   ],
