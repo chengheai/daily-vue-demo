@@ -1,5 +1,7 @@
 <template>
-  <div>
+<div :class="{'js_loading':loading}">
+  <my-loading v-if="loading"  />
+  <div v-else>
     <span class="gree-wrap animated flip slower">
       <h2>{{greeting}} , 老玻璃！</h2>
     </span>
@@ -204,15 +206,22 @@
       </router-link>
     </el-col>
   </div>
+</div>
 </template>
 
 <script>
 /* eslint-disable */
 var hour = new Date().getHours();
+import MyLoading from './Loading'
 export default {
   name: 'HelloWorld',
+  components:{
+    MyLoading
+  },
   data() {
     return {
+      loading:true,
+      timer: null,
       greeting: 'Welcome to Your Vue.js App',
     };
   },
@@ -238,13 +247,29 @@ export default {
     },
   },
   mounted() {
+     this.timer = setTimeout(() => {
+       this.loading = false
+     }, 6000);
     this.greet();
   },
+   beforeDestroy() {
+    clearTimeout(this.timer);
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.js_loading {
+  background: #000;
+  display: flex;
+  font: 1em/1.5 sans-serif;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 999999;
+}
 .bb {
   color: red;
 }
