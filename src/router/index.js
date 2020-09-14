@@ -47,6 +47,7 @@ import TestF from '@/components/TestF';
 import Datepicker from '@/components/Datepicker';
 import Checkoutbox from '@/components/Checkoutbox';
 import Form from '@/components/Form';
+import Canvas from '@/components/Canvas';
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: 'ease', speed: 500 });
@@ -409,6 +410,14 @@ const router = new Router({
       component: Form,
       meta: {
         title: 'Form相关',
+      },
+    },
+    {
+      path: '/canvas',
+      name: 'canvas',
+      component: Canvas,
+      meta: {
+        title: 'Canvas',
       },
     },
   ],
