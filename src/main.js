@@ -20,9 +20,12 @@ import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
 import 'quill/dist/quill.bubble.css';
 
+import VCharts from 'v-charts'
+
+Vue.use(VCharts)
 import Moast from './../src/com/dialog';
 Vue.use(Moast);
-import myalert from './../src/com/myalert' //这里引入的是js文件 
+import myalert from './../src/com/myalert' //这里引入的是js文件
 Vue.prototype.$myalert = myalert;
 
 Vue.use(VueQuillEditor /* { default global options } */);

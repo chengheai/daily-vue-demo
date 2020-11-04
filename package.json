@@ -13,15 +13,18 @@
   "dependencies": {
     "animate.css": "^3.7.0",
     "axios": "^0.18.0",
+    "echarts": "^4.9.0",
     "element-ui": "^2.4.9",
     "express": "^4.17.1",
     "hover.css": "^2.3.2",
     "multer": "^1.4.2",
     "three": "^0.104.0",
+    "v-charts": "^1.19.0",
     "vue": "^2.5.2",
     "vue-fullcalendar": "^1.0.9",
     "vue-pdf": "^4.0.7",
     "vue-router": "^3.0.1",
+    "vue-socket.io": "^3.0.10",
     "vue-week-picker": "^1.1.8",
     "vuex": "^3.1.0"
   },
