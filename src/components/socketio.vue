@@ -1,9 +1,14 @@
 <template>
-  <div>
+  <div v-if="chartData">
     <ve-histogram :data="chartData"></ve-histogram>
     {{chartData}}
     <!-- <el-button type="primary" @click="clickButton">发送</el-button> -->
   </div>
+    <el-alert
+    v-else
+    title="Please start server.js on your computer terminal"
+    type="error">
+  </el-alert>
 </template>
 
 <script>

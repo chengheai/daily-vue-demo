@@ -213,8 +213,8 @@
       <em></em>
     </div>
     <div class="imgs">
-      <img class="Rotation" src="./../assets/WechatIMG29.jpeg" alt>
-      <img class="Rotation" src="./../assets/WechatIMG30.jpeg" alt>
+      <img class="Rotation" src="./../assets/dog.jpg" alt>
+      <img class="Rotation" src="./../assets/dog.jpg" alt>
     </div>
   </div>
 </template>

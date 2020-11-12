@@ -49,6 +49,7 @@ import Checkoutbox from '@/components/Checkoutbox';
 import Form from '@/components/Form';
 import Canvas from '@/components/Canvas';
 import socketio from '@/components/socketio';
+import communication from '@/pages/communication';
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: 'ease', speed: 500 });
@@ -426,6 +427,13 @@ const router = new Router({
       component: socketio,
       meta: {
         title: 'socket',
+      },
+    },{
+      path: '/communication',
+      name: 'communication',
+      component: communication,
+      meta: {
+        title: '组件通信',
       },
     },
   ],
