@@ -50,6 +50,7 @@ import Form from '@/components/Form';
 import Canvas from '@/components/Canvas';
 import socketio from '@/components/socketio';
 import communication from '@/pages/communication';
+import Bus from '@/components/Bus';
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: 'ease', speed: 500 });
@@ -434,6 +435,13 @@ const router = new Router({
       component: communication,
       meta: {
         title: '组件通信',
+      },
+    },{
+      path: '/bus',
+      name: 'bus',
+      component: Bus,
+      meta: {
+        title: 'bus实时监听',
       },
     },
   ],

@@ -8,6 +8,7 @@ import ElementUI from 'element-ui';
 import animated from 'animate.css';
 import axios from 'axios';
 import store from './store';
+import bus from './util/bus.js';
 import _ from 'lodash';
 import fullCalendar from 'vue-fullcalendar';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -31,6 +32,7 @@ Vue.prototype.$myalert = myalert;
 Vue.use(VueQuillEditor /* { default global options } */);
 
 Vue.prototype._ = _;
+Vue.prototype.Bus = bus;
 // Object.defineProperty(Vue.prototype._, '_', { value: lodash });
 Vue.prototype.$http = axios;
 Vue.config.productionTip = false;
