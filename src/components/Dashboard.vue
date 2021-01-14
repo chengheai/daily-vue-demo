@@ -230,6 +230,11 @@
           <el-button type="primary">Bus实时监听</el-button>
         </router-link>
       </el-col>
+      <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+        <router-link to="/ding" tag="li">
+          <el-button type="danger">钉钉</el-button>
+        </router-link>
+      </el-col>
     </div>
   </div>
 </template>

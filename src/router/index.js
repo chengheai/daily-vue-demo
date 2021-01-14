@@ -50,6 +50,7 @@ import Form from '@/components/Form';
 import Canvas from '@/components/Canvas';
 import socketio from '@/components/socketio';
 import communication from '@/pages/communication';
+import Ding from '@/components/Ding';
 import Bus from '@/components/Bus';
 
 // 配置NProgress进度条选项  —— 动画效果
@@ -442,7 +443,15 @@ const router = new Router({
       component: Bus,
       meta: {
         title: 'bus实时监听',
-      },
+      }
+    },
+      {
+        path: '/ding',
+        name: 'Ding',
+        component: Ding,
+        meta: {
+          title: '钉钉',
+        },
     },
   ],
   scrollBehavior(to, from, savedPosition) {
