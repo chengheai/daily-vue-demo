@@ -55,8 +55,7 @@ export default {
   data() {
     return {
       form: {
-        token:
-          "c8d51beb420c651fc6edf0aaeb1979503d44605eebbf1a5c208b98ad592bb994",
+        token: "",
         type: "3",
         title: "",
         content: "",
@@ -75,7 +74,7 @@ export default {
   methods: {
     submitForm(formName) {
       const { token, type, title, content, url, phone } = this.form;
-      const robot = new DingRobot(this.token);
+      const robot = new DingRobot(token);
       const content1 = content.indexOf("！") > -1 ? content : `${content}！`;
       this.$refs[formName].validate(valid => {
         if (valid) {
