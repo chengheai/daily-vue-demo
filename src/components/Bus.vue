@@ -5,16 +5,19 @@
     <ChildBus></ChildBus>
     <!-- 不生效 -->
     <ChildBus1></ChildBus1>
+    <ChildBus2></ChildBus2>
   </div>
 </template>
 
 <script>
 import ChildBus from "./ChildBus";
 import ChildBus1 from "./ChildBus1";
+import ChildBus2 from "./ChildBus2";
 export default {
   components: {
     ChildBus,
-    ChildBus1
+    ChildBus1,
+    ChildBus2
   },
   data() {
     return {
