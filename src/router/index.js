@@ -53,6 +53,7 @@ import communication from "@/pages/communication";
 import Ding from "@/components/Ding";
 import Checked from "@/components/Checked";
 import Bus from "@/components/Bus";
+import vModel from "@/components/v-model";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -463,6 +464,14 @@ const router = new Router({
       component: Checked,
       meta: {
         title: "自定义checked"
+      }
+    },
+    {
+      path: "/v-model",
+      name: "vModel",
+      component: vModel,
+      meta: {
+        title: "自定义v-model"
       }
     }
   ],
