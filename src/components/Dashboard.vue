@@ -250,6 +250,11 @@
           <el-button type="danger">自定义v-model eg.</el-button>
         </router-link>
       </el-col>
+      <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+        <router-link to="/pagination" tag="li">
+          <el-button type="warning">自定义分页</el-button>
+        </router-link>
+      </el-col>
     </div>
   </div>
 </template>
