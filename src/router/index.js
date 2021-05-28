@@ -56,6 +56,7 @@ import Bus from "@/components/Bus";
 import vModel from "@/components/v-model";
 import Model from "@/components/model";
 import Pagination from "@/components/Pagination";
+import Update from "@/components/Update";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -490,6 +491,13 @@ const router = new Router({
       component: Pagination,
       meta: {
         title: "自定义分页"
+      }
+    },{
+      path: "/update",
+      name: "Update",
+      component: Update,
+      meta: {
+        title: "$emit('update:xx', xxx)"
       }
     }
   ],
