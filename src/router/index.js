@@ -57,6 +57,8 @@ import vModel from "@/components/v-model";
 import Model from "@/components/model";
 import Pagination from "@/components/Pagination";
 import Update from "@/components/Update";
+import selectLabel from "@/components/selectLabel";
+import Target from "@/components/Target";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -498,6 +500,20 @@ const router = new Router({
       component: Update,
       meta: {
         title: "$emit('update:xx', xxx)"
+      }
+    },{
+      path: "/select-label",
+      name: "selectLabel",
+      component: selectLabel,
+      meta: {
+        title: "自定义label"
+      }
+    },{
+      path: "/target",
+      name: "Target",
+      component: Target,
+      meta: {
+        title: "锚点"
       }
     }
   ],
