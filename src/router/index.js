@@ -59,6 +59,7 @@ import Pagination from "@/components/Pagination";
 import Update from "@/components/Update";
 import selectLabel from "@/components/selectLabel";
 import Target from "@/components/Target";
+import GroupSelect from "@/components/GroupSelect";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -514,6 +515,13 @@ const router = new Router({
       component: Target,
       meta: {
         title: "锚点"
+      }
+    },{
+      path: "/group-select",
+      name: "GroupSelect",
+      component: GroupSelect,
+      meta: {
+        title: "el-select点组实现全选"
       }
     }
   ],
