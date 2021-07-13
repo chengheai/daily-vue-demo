@@ -60,6 +60,8 @@ import Update from "@/components/Update";
 import selectLabel from "@/components/selectLabel";
 import Target from "@/components/Target";
 import GroupSelect from "@/components/GroupSelect";
+import Qq from "@/components/Qq";
+import Flex from "@/components/flex";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -522,6 +524,20 @@ const router = new Router({
       component: GroupSelect,
       meta: {
         title: "el-select点组实现全选"
+      }
+    },{
+      path: "/qq",
+      name: "Qq",
+      component: Qq,
+      meta: {
+        title: "在线"
+      }
+    },{
+      path: "/flex",
+      name: "Flex",
+      component: Flex,
+      meta: {
+        title: "flex"
       }
     }
   ],

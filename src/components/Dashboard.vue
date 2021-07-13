@@ -275,6 +275,16 @@
           <el-button type="warning">组选择</el-button>
         </router-link>
       </el-col>
+        <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+        <router-link to="/qq" tag="li">
+          <el-button type="warning">客服</el-button>
+        </router-link>
+      </el-col>
+      <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+        <router-link to="/flex" tag="li">
+          <el-button type="warning">flex</el-button>
+        </router-link>
+      </el-col>
     </div>
   </div>
 </template>
