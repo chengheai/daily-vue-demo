@@ -285,6 +285,16 @@
           <el-button type="warning">flex</el-button>
         </router-link>
       </el-col>
+      <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+        <router-link to="/debounce" tag="li">
+          <el-button type="warning">防抖</el-button>
+        </router-link>
+      </el-col>
+      <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+        <router-link to="/throttle" tag="li">
+          <el-button type="warning">截流</el-button>
+        </router-link>
+      </el-col>
     </div>
   </div>
 </template>

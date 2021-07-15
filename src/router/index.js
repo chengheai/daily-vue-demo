@@ -62,6 +62,8 @@ import Target from "@/components/Target";
 import GroupSelect from "@/components/GroupSelect";
 import Qq from "@/components/Qq";
 import Flex from "@/components/flex";
+import Throttle from "@/components/throttle";
+import Debounce from "@/components/debounce";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -538,6 +540,20 @@ const router = new Router({
       component: Flex,
       meta: {
         title: "flex"
+      }
+    },{
+      path: "/throttle",
+      name: "Throttle",
+      component: Throttle,
+      meta: {
+        title: "截流"
+      }
+    },{
+      path: "/debounce",
+      name: "Debounce",
+      component: Debounce,
+      meta: {
+        title: "防抖"
       }
     }
   ],
