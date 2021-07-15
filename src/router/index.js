@@ -64,6 +64,7 @@ import Qq from "@/components/Qq";
 import Flex from "@/components/flex";
 import Throttle from "@/components/throttle";
 import Debounce from "@/components/debounce";
+import Promise from "@/components/promise";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -554,6 +555,14 @@ const router = new Router({
       component: Debounce,
       meta: {
         title: "防抖"
+      }
+    },
+    {
+      path: "/promise",
+      name: "promise",
+      component: Promise,
+      meta: {
+        title: "promise相关"
       }
     }
   ],
