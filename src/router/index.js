@@ -65,6 +65,9 @@ import Flex from "@/components/flex";
 import Throttle from "@/components/throttle";
 import Debounce from "@/components/debounce";
 import Promise from "@/components/promise";
+import Ceiling from "@/components/Ceiling";
+import Ceiling1 from "@/components/Ceiling1";
+import Slot from "@/components/Slot";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -563,6 +566,30 @@ const router = new Router({
       component: Promise,
       meta: {
         title: "promise相关"
+      }
+    },
+    {
+      path: "/ceiling",
+      name: "Ceiling",
+      component: Ceiling,
+      meta: {
+        title: "标题吸顶"
+      }
+    },
+    {
+      path: "/ceiling1",
+      name: "Ceiling1",
+      component: Ceiling1,
+      meta: {
+        title: "标题吸顶sticky"
+      }
+    },
+    {
+      path: "/slot",
+      name: "Slot",
+      component: Slot,
+      meta: {
+        title: "插槽"
       }
     }
   ],

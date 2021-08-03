@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import SocketIO from "vue-socket.io";
-import Vue from "vue";
-Vue.use(
-  new SocketIO({
-    debugger: true,
-    connection: "http://localhost:2000"
-  })
-);
+// import SocketIO from "vue-socket.io";
+// import Vue from "vue";
+// Vue.use(
+//   new SocketIO({
+//     debugger: true,
+//     connection: "http://localhost:2000"
+//   })
+// );
 export default {
   name: "socket",
   data() {
@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     clickButton() {
-      this.$socket.emit("hello", { roomName: "aaa", message: "你好" }); // 发送信息到后台hello事件
+      // this.$socket.emit("hello", { roomName: "aaa", message: "你好" }); // 发送信息到后台hello事件
     }
   }
 };
