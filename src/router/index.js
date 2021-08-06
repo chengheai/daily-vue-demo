@@ -69,6 +69,7 @@ import Ceiling from "@/components/Ceiling";
 import Ceiling1 from "@/components/Ceiling1";
 import Slot from "@/components/Slot";
 import RegExp from "@/components/RegExp";
+import getBoundingClientRect from "@/components/getBoundingClientRect";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -599,6 +600,14 @@ const router = new Router({
       component: RegExp,
       meta: {
         title: "正则"
+      }
+    },
+    {
+      path: "/getBoundingClientRect",
+      name: "getBoundingClientRect",
+      component: getBoundingClientRect,
+      meta: {
+        title: "getBoundingClientRect"
       }
     }
   ],
