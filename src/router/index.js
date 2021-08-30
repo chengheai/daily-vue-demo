@@ -70,6 +70,8 @@ import Ceiling1 from "@/components/Ceiling1";
 import Slot from "@/components/Slot";
 import RegExp from "@/components/RegExp";
 import getBoundingClientRect from "@/components/getBoundingClientRect";
+import Mi from "@/components/Mi";
+import Provide from "@/components/Provide";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -608,6 +610,22 @@ const router = new Router({
       component: getBoundingClientRect,
       meta: {
         title: "getBoundingClientRect"
+      }
+    },
+    {
+      path: "/mi",
+      name: "Mi",
+      component: Mi,
+      meta: {
+        title: "mi"
+      }
+    },
+    {
+      path: "/provide",
+      name: "Provide",
+      component: Provide,
+      meta: {
+        title: "Provide"
       }
     }
   ],

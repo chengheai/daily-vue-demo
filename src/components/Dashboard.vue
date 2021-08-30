@@ -321,8 +321,18 @@
         </router-link>
       </el-col>
       <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
-        <router-link to="/getBoundingClientRect" tag="li">
+        <router-link to="/getBoundingClientRect" class="txt-cut" tag="li">
           <el-button type="warning">getBoundingClientRect</el-button>
+        </router-link>
+      </el-col>
+        <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+        <router-link to="/mi" tag="li">
+          <el-button type="warning">小组件</el-button>
+        </router-link>
+      </el-col>
+             <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+        <router-link to="/provide" tag="li">
+          <el-button type="warning">provide</el-button>
         </router-link>
       </el-col>
     </div>
@@ -380,6 +390,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.txt-cut {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .js_loading {
   background: #000;
   display: flex;
