@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <UpdateChild :title.sync="p_title2"></UpdateChild>
@@ -14,8 +13,8 @@ export default {
   },
   data() {
     return {
-      p_title: '标题1',
-      p_title2: '标题2'
+      p_title: '点击我1',
+      p_title2: '点击我2'
     }
   }
 }
