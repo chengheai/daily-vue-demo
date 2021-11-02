@@ -74,6 +74,7 @@ import Mi from "@/components/Mi";
 import Provide from "@/components/Provide";
 import AutoLogout from "@/components/AutoLogout";
 import CopyImage from "@/components/CopyImage";
+import Tree1 from "@/components/Tree1";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -644,6 +645,14 @@ const router = new Router({
       component: CopyImage,
       meta: {
         title: "CopyImage"
+      }
+    },
+    {
+      path: "/tree1",
+      name: "Tree1",
+      component: Tree1,
+      meta: {
+        title: "Tree1"
       }
     }
   ],

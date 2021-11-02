@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <el-form
@@ -68,9 +69,6 @@ export default {
   },
 
   methods: {
-    getDisable(value) {
-      return this.selectedOptions.indexOf(value) !== -1;
-    },
     selectChange(value, index) {
       this.selectedOptions[index] = value;
     },
