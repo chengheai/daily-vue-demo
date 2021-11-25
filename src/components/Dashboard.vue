@@ -275,7 +275,7 @@
           <el-button type="warning">组选择</el-button>
         </router-link>
       </el-col>
-        <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+      <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
         <router-link to="/qq" tag="li">
           <el-button type="warning">客服</el-button>
         </router-link>
@@ -325,17 +325,17 @@
           <el-button type="warning">getBoundingClientRect</el-button>
         </router-link>
       </el-col>
-        <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+      <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
         <router-link to="/mi" tag="li">
           <el-button type="warning">小组件</el-button>
         </router-link>
       </el-col>
-             <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+      <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
         <router-link to="/provide" tag="li">
           <el-button type="warning">provide</el-button>
         </router-link>
       </el-col>
-                   <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+      <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
         <router-link to="/auto-logout" tag="li">
           <el-button type="warning">自动退出登录</el-button>
         </router-link>
@@ -345,7 +345,7 @@
           <el-button type="warning">复制图片到剪切板</el-button>
         </router-link>
       </el-col>
-            <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
+      <el-col :xs="12" :sm="6" :md="6" :lg="3" :xl="2">
         <router-link to="/tree1" tag="li">
           <el-button type="warning">vue-tree</el-button>
         </router-link>
@@ -394,7 +394,7 @@ export default {
   mounted() {
     this.timer = setTimeout(() => {
       this.loading = false;
-    }, 6000);
+    }, 1500);
     this.greet();
   },
   beforeDestroy() {
