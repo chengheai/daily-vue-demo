@@ -75,6 +75,7 @@ import Provide from "@/components/Provide";
 import AutoLogout from "@/components/AutoLogout";
 import CopyImage from "@/components/CopyImage";
 import Tree1 from "@/components/Tree1";
+import spanTable from "@/components/spanTable";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -510,56 +511,64 @@ const router = new Router({
       meta: {
         title: "自定义分页"
       }
-    },{
+    },
+    {
       path: "/update",
       name: "Update",
       component: Update,
       meta: {
         title: "$emit('update:xx', xxx)"
       }
-    },{
+    },
+    {
       path: "/select-label",
       name: "selectLabel",
       component: selectLabel,
       meta: {
         title: "自定义label"
       }
-    },{
+    },
+    {
       path: "/target",
       name: "Target",
       component: Target,
       meta: {
         title: "锚点"
       }
-    },{
+    },
+    {
       path: "/group-select",
       name: "GroupSelect",
       component: GroupSelect,
       meta: {
         title: "el-select点组实现全选"
       }
-    },{
+    },
+    {
       path: "/qq",
       name: "Qq",
       component: Qq,
       meta: {
         title: "在线"
       }
-    },{
+    },
+    {
       path: "/flex",
       name: "Flex",
       component: Flex,
       meta: {
         title: "flex"
       }
-    },{
+    },
+    {
       path: "/throttle",
       name: "Throttle",
       component: Throttle,
       meta: {
         title: "截流"
       }
-    },{
+    },
+    {
       path: "/debounce",
       name: "Debounce",
       component: Debounce,
@@ -653,6 +662,14 @@ const router = new Router({
       component: Tree1,
       meta: {
         title: "Tree1"
+      }
+    },
+    {
+      path: "/span-table",
+      name: "spanTable",
+      component: spanTable,
+      meta: {
+        title: "spanTable"
       }
     }
   ],
