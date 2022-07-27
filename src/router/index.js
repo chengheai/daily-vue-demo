@@ -76,6 +76,7 @@ import AutoLogout from "@/components/AutoLogout";
 import CopyImage from "@/components/CopyImage";
 import Tree1 from "@/components/Tree1";
 import spanTable from "@/components/spanTable";
+import attrListener from "@/components/attr-listener";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -670,6 +671,14 @@ const router = new Router({
       component: spanTable,
       meta: {
         title: "spanTable"
+      }
+    },
+    {
+      path: "/attr-listener",
+      name: "attrListener",
+      component: attrListener,
+      meta: {
+        title: "attrListener"
       }
     }
   ],
