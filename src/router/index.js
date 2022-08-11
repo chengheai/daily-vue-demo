@@ -77,6 +77,7 @@ import CopyImage from "@/components/CopyImage";
 import Tree1 from "@/components/Tree1";
 import spanTable from "@/components/spanTable";
 import attrListener from "@/components/attr-listener";
+import scopedSlots from "@/components/scopedSlots";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -679,6 +680,14 @@ const router = new Router({
       component: attrListener,
       meta: {
         title: "attrListener"
+      }
+    },
+    {
+      path: "/scoped-slots",
+      name: "scopedSlots",
+      component: scopedSlots,
+      meta: {
+        title: "scopedSlots"
       }
     }
   ],
