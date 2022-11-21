@@ -78,6 +78,7 @@ import Tree1 from "@/components/Tree1";
 import spanTable from "@/components/spanTable";
 import attrListener from "@/components/attr-listener";
 import scopedSlots from "@/components/scopedSlots";
+import lifecycle from "@/components/lifecycle";
 
 // 配置NProgress进度条选项  —— 动画效果
 NProgress.configure({ ease: "ease", speed: 500 });
@@ -688,6 +689,14 @@ const router = new Router({
       component: scopedSlots,
       meta: {
         title: "scopedSlots"
+      }
+    },
+    {
+      path: "/lifecycle",
+      name: "lifecycle",
+      component: lifecycle,
+      meta: {
+        title: "lifecycle"
       }
     }
   ],
